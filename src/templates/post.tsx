@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import { PostContext } from "../../gatsby-node"
 
 type Props = {

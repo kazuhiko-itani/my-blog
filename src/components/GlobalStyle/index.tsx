@@ -73,11 +73,6 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  ul[class],
-  ol[class] {
-    padding: 0;
-  }
-
   ul,
   li {
     list-style: none;

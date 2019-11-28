@@ -1,17 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
 import styles from "./styles"
 
-const { StyledHeader } = styles
+const { StyledHeader, Inner, StyledLink } = styles
 
-export const Header: React.FC = () => {
+const Header: React.FC = () => {
   return (
     <StyledHeader>
-      <ul>
-        <li>
-          <Link to="/about">ABOUT ME</Link>
-        </li>
-      </ul>
+      <Inner>
+        <ul>
+          <li>
+            <StyledLink to="/about">ABOUT ME</StyledLink>
+          </li>
+        </ul>
+      </Inner>
     </StyledHeader>
   )
 }
+
+export default Header
