@@ -3900,6 +3900,9 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___spaceId' |
   'pluginCreator___pluginOptions___accessToken' |
   'pluginCreator___pluginOptions___fileName' |
+  'pluginCreator___pluginOptions___stages' |
+  'pluginCreator___pluginOptions___options___emitWarning' |
+  'pluginCreator___pluginOptions___options___failOnError' |
   'pluginCreator___pluginOptions___short_name' |
   'pluginCreator___pluginOptions___start_url' |
   'pluginCreator___pluginOptions___background_color' |
@@ -4098,6 +4101,9 @@ export type SitePluginFieldsEnum =
   'pluginOptions___spaceId' |
   'pluginOptions___accessToken' |
   'pluginOptions___fileName' |
+  'pluginOptions___stages' |
+  'pluginOptions___options___emitWarning' |
+  'pluginOptions___options___failOnError' |
   'pluginOptions___short_name' |
   'pluginOptions___start_url' |
   'pluginOptions___background_color' |
@@ -4225,6 +4231,8 @@ export type SitePluginPluginOptions = {
   spaceId?: Maybe<Scalars['String']>,
   accessToken?: Maybe<Scalars['String']>,
   fileName?: Maybe<Scalars['String']>,
+  stages?: Maybe<Array<Maybe<Scalars['String']>>>,
+  options?: Maybe<SitePluginPluginOptionsOptions>,
   short_name?: Maybe<Scalars['String']>,
   start_url?: Maybe<Scalars['String']>,
   background_color?: Maybe<Scalars['String']>,
@@ -4240,6 +4248,8 @@ export type SitePluginPluginOptionsFilterInput = {
   spaceId?: Maybe<StringQueryOperatorInput>,
   accessToken?: Maybe<StringQueryOperatorInput>,
   fileName?: Maybe<StringQueryOperatorInput>,
+  stages?: Maybe<StringQueryOperatorInput>,
+  options?: Maybe<SitePluginPluginOptionsOptionsFilterInput>,
   short_name?: Maybe<StringQueryOperatorInput>,
   start_url?: Maybe<StringQueryOperatorInput>,
   background_color?: Maybe<StringQueryOperatorInput>,
@@ -4247,6 +4257,16 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsOptions = {
+  emitWarning?: Maybe<Scalars['Boolean']>,
+  failOnError?: Maybe<Scalars['Boolean']>,
+};
+
+export type SitePluginPluginOptionsOptionsFilterInput = {
+  emitWarning?: Maybe<BooleanQueryOperatorInput>,
+  failOnError?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {

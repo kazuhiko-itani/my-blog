@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
-    description: 'test description',
-    author: 'kazuhiko',
+    description: "test description",
+    author: "kazuhiko",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,6 +29,18 @@ module.exports = {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
         fileName: `types/graphql-types.d.ts`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        test: /\.js$|\.jsx$|\.ts$|.tsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ["develop"],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
       },
     },
     {
