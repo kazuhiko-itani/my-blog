@@ -8,6 +8,11 @@ const MainVisual = styled(Img)`
 
 const Main = styled.main`
   margin: 50px 74px 120px 74px;
+
+  @media (max-width: 767px) {
+    margin: 20px;
+    margin-bottom: 80px;
+  }
 `
 
 export default {

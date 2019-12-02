@@ -8,6 +8,10 @@ const StyledFooter = styled.div`
 
 const Inner = styled.div`
   padding: 40px 80px;
+
+  @media (max-width: 767px) {
+    padding: 30px 20px;
+  }
 `
 
 const List = styled.ul`

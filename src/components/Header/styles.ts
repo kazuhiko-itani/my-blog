@@ -7,11 +7,19 @@ const StyledHeader = styled.header`
 
 const Inner = styled.div`
   padding: 10px 35px;
+
+  @media (max-width: 767px) {
+    padding: 10px 20px;
+  }
 `
 
 const List = styled.ul`
   display: flex;
-  padding-top: 12px;
+  padding: 12px 20px;
+
+  @media (max-width: 767px) {
+    padding-left: 0;
+  }
 `
 
 const ListItem = styled.li`
