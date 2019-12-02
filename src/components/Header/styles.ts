@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
 `
 
 const Inner = styled.div`
-  padding: 10px 35px;
+  padding: 10px 74px;
 
   @media (max-width: 767px) {
     padding: 10px 20px;
@@ -15,7 +15,7 @@ const Inner = styled.div`
 
 const List = styled.ul`
   display: flex;
-  padding: 12px 20px;
+  padding: 12px 0;
 
   @media (max-width: 767px) {
     padding-left: 0;
