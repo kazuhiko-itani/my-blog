@@ -4309,6 +4309,14 @@ export type MainVisualImageQueryVariables = {};
 
 export type MainVisualImageQuery = { MainVisualImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
+export type AllPostQueryVariables = {};
+
+
+export type AllPostQuery = { allContentfulPost: { edges: Array<{ node: (
+        Pick<ContentfulPost, 'publishedAt' | 'slug' | 'title' | 'updatedAt' | 'id'>
+        & { content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html' | 'excerpt'>> }>, image: Maybe<{ fluid: Maybe<Pick<ContentfulFluid, 'src'>> }> }
+      ) }> } };
+
 export type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 export type GatsbyContentfulFixed_TracedSvgFragment = Pick<ContentfulFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;

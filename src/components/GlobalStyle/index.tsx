@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   {
     font-family: YuGothic, "Yu Gothic", 游ゴシック体, 游ゴシック, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "MS ゴシック", "MS Gothic", sans-serif;
     font-size: 14px;
+    color: #333;
     box-sizing: border-box;
   }
 
