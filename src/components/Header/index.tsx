@@ -1,17 +1,20 @@
 import React from "react"
 import styles from "./styles"
 
-const { StyledHeader, Inner, StyledLink } = styles
+const { StyledHeader, Inner, List, ListItem, StyledLink } = styles
 
 const Header: React.FC = () => {
   return (
     <StyledHeader>
       <Inner>
-        <ul>
-          <li>
+        <List>
+          <ListItem>
+            <StyledLink to="/">HOME</StyledLink>
+          </ListItem>
+          <ListItem>
             <StyledLink to="/about">ABOUT ME</StyledLink>
-          </li>
-        </ul>
+          </ListItem>
+        </List>
       </Inner>
     </StyledHeader>
   )

@@ -9,6 +9,15 @@ const Inner = styled.div`
   padding: 10px 35px;
 `
 
+const List = styled.ul`
+  display: flex;
+  padding-top: 12px;
+`
+
+const ListItem = styled.li`
+  margin-right: 16px;
+`
+
 const StyledLink = styled(Link)`
   color: rgba(0, 0, 0, 0.5);
 `
@@ -16,5 +25,7 @@ const StyledLink = styled(Link)`
 export default {
   StyledHeader,
   Inner,
+  List,
+  ListItem,
   StyledLink,
 }
