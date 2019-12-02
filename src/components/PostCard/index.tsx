@@ -13,13 +13,14 @@ type Props = {
   title: string
   slug: string
   excerpt: string
+  className?: string
 }
 
 const { Card, CardContent, Published, PostContent } = styles
 
 export const PostCard: React.FC<Props> = props => {
   return (
-    <Card>
+    <Card className={props.className}>
       <div>
         <Link to={props.slug}>
           <img src={props.image} />

@@ -6,6 +6,10 @@ const { secondary } = color
 const Card = styled.div`
   width: 30%;
   height: 100%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `
 
 const CardContent = styled.div`

@@ -10,8 +10,7 @@ const Main = styled.main`
   margin: 50px 74px 120px 74px;
 
   @media (max-width: 767px) {
-    margin: 20px;
-    margin-bottom: 80px;
+    margin: 40px 20px 80px;
   }
 `
 

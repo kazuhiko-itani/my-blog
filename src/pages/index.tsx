@@ -19,7 +19,7 @@ const IndexPage: React.FC<Props> = props => {
       <Posts>
         {props.data.allContentfulPost.edges.map(edge => {
           return (
-            <PostCard
+            <StyledPostCard
               key={edge.node.id}
               image={edge.node.image.fluid.src}
               publishedAt={moment(edge.node.publishedAt).format("YYYY-MM-DD")}
@@ -66,4 +66,14 @@ export default IndexPage
 const Posts = styled.div`
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+`
+
+const StyledPostCard = styled(PostCard)`
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+  }
 `
