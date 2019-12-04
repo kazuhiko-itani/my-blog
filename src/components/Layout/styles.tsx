@@ -6,15 +6,29 @@ const MainVisual = styled(Img)`
   height: 300px;
 `
 
-const Main = styled.main`
-  margin: 50px 74px 120px 74px;
+const MainLayout = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 120px;
 
   @media (max-width: 767px) {
-    margin: 40px 20px 80px;
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+`
+
+const Main = styled.main`
+  width: 55%;
+  margin: 4px 24px;
+
+  @media (max-width: 767px) {
+    width: 90%;
+    margin: 40px auto;
   }
 `
 
 export default {
   MainVisual,
+  MainLayout,
   Main,
 }

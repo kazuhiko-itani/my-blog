@@ -4,8 +4,9 @@ import color from "../GlobalStyle/color"
 const { secondary } = color
 
 const Card = styled.div`
-  width: 30%;
+  width: 48%;
   height: 100%;
+  margin-bottom: 40px;
 
   @media (max-width: 767px) {
     width: 100%;

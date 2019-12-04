@@ -4334,6 +4334,11 @@ export type MainVisualImageQueryVariables = {};
 
 export type MainVisualImageQuery = { MainVisualImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
+export type ProfileImageQueryVariables = {};
+
+
+export type ProfileImageQuery = { ProfileImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
+
 export type MyIconImageQueryVariables = {};
 
 

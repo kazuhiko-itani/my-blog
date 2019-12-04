@@ -65,7 +65,8 @@ export default IndexPage
 
 const Posts = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
   @media (max-width: 767px) {
     display: block;

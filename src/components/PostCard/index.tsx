@@ -29,7 +29,9 @@ export const PostCard: React.FC<Props> = props => {
       <CardContent>
         <Published>{moment(props.publishedAt).format("YYYY-MM-DD")}</Published>
         <StyledHeadingH2>
-          <TextLink to={`/posts/${props.slug}`}>{props.title}</TextLink>
+          <StyledTextLink to={`/posts/${props.slug}`}>
+            {props.title}
+          </StyledTextLink>
         </StyledHeadingH2>
         <PostContent>{props.excerpt}</PostContent>
       </CardContent>
@@ -41,4 +43,9 @@ export default PostCard
 
 const StyledHeadingH2 = styled(HeadingH2)`
   margin-top: 10px;
+`
+
+const StyledTextLink = styled(Link)`
+  color: #333;
+  text-decoration: none;
 `

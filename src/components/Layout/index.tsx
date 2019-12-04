@@ -1,13 +1,15 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styles from "./styles"
+import styled from "styled-components"
 
 import Header from "../Header"
 import Footer from "../Footer"
+import SideBar from "../SideBar"
 import { GlobalStyle } from "../GlobalStyle"
 import { MainVisualImageQuery } from "../../../types/graphql-types"
 
-const { MainVisual, Main } = styles
+const { MainVisual, MainLayout, Main } = styles
 
 type Props = {
   children: React.ReactNode
@@ -34,10 +36,22 @@ const Layout: React.FC<Props> = props => {
       <GlobalStyle />
       <Header />
       <MainVisual fluid={image} />
-      <Main>{props.children}</Main>
+      <MainLayout>
+        <Main>{props.children}</Main>
+        <StyledSideBar />
+      </MainLayout>
       <Footer />
     </>
   )
 }
 
 export default Layout
+
+const StyledSideBar = styled(SideBar)`
+  width: 20%;
+
+  @media (max-width: 767px) {
+    width: 95%;
+    margin: 0 auto;
+  }
+`

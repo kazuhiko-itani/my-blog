@@ -5,11 +5,10 @@ import color from "../../GlobalStyle/color"
 const { secondary } = color
 
 const StyledLink = styled(Link)`
-  color: #333;
+  color: ${secondary};
 
   &:hover {
-    color: ${secondary};
-    transition: all 0.2s;
+    text-decoration: underline;
   }
 `
 
