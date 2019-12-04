@@ -11,7 +11,7 @@ const { ContentWrapper, MyIcon } = styles
 
 const ProfileCard: React.FC = () => {
   const data: ProfileImageQuery = useStaticQuery(graphql`
-    query ProfileImage {
+    query {
       ProfileImage: file(relativePath: { eq: "Icon.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 300) {

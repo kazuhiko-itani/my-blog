@@ -4334,15 +4334,15 @@ export type MainVisualImageQueryVariables = {};
 
 export type MainVisualImageQuery = { MainVisualImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
+export type Unnamed_1_QueryVariables = {};
+
+
+export type Unnamed_1_Query = { ProfileImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
+
 export type ProfileImageQueryVariables = {};
 
 
 export type ProfileImageQuery = { ProfileImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
-
-export type MyIconImageQueryVariables = {};
-
-
-export type MyIconImageQuery = { MyIconImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
 export type AllPostQueryVariables = {};
 

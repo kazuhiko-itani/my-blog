@@ -2,54 +2,94 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { MyIconImageQuery } from "../../types/graphql-types"
+import { ProfileQuery } from "../../types/graphql-types"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import { HeadingH2, HeadingH3 } from "../components/Atoms/Heading"
 
 type Props = {
-  data: MyIconImageQuery
+  data: ProfileQuery
 }
 
 const AboutPage: React.FC<Props> = props => {
-  const image: any = props.data.MyIconImage.childImageSharp.fluid
+  const image: any = props.data.ProfileImage.childImageSharp.fluid
+
+  const usefulLanguage = [
+    "Laravel(PHP)",
+    "React",
+    "Vue.js(Nuxt.js)",
+    "TypeScript",
+    "AWS",
+    "Docker",
+    "Terraform",
+  ]
 
   return (
     <Layout>
       <SEO title="About" />
       <Content>
-        <MyIcon fluid={image} />
+        <IconWrapper>
+          <Icon fluid={image} />
+        </IconWrapper>
         <div>
           <HeadingH2>プロフィール</HeadingH2>
           <div>
-            <HeadingH3>経歴</HeadingH3>
-            <p>
-              2018年11月からWebエンジニア。コーヒーが好き。このブログはGatsbyで構成されていて、主に技術系の記事をアップしています。
-            </p>
+            <StyledHeadingH3>経歴</StyledHeadingH3>
+            <Text>
+              2018年11月からWebエンジニア。コーヒーが好き。
+              <br />
+              このブログはGatsbyで構成されていて、主に技術系の記事をアップしています。
+            </Text>
           </div>
           <div>
-            <HeadingH3>使える技術</HeadingH3>
-            <ul>
-              <li>Laravel(PHP)</li>
-              <li>React</li>
-              <li>Vue.js(Nuxt.js)</li>
-              <li>TypeScript</li>
-              <li>AWS</li>
-              <li>Docker</li>
-              <li>Terraform</li>
-            </ul>
+            <StyledHeadingH3>使える技術</StyledHeadingH3>
+            <List>
+              {usefulLanguage.map((language, index) => {
+                return <ListItem key={index}>・{language}</ListItem>
+              })}
+            </List>
           </div>
+          <StyledHeadingH3>各種リンク</StyledHeadingH3>
+          <Text>
+            Twitter：{" "}
+            <a
+              href="https://twitter.com/akashi__akashi"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              @akashi__akashi
+            </a>
+          </Text>
+          <Text>
+            Qiita：{" "}
+            <a
+              href="https://qiita.com/akashixi"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              https://qiita.com/akashixi
+            </a>
+          </Text>
+          <Text>
+            GitHub：{" "}
+            <a
+              href="https://github.com/kazuhiko-itani"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              https://github.com/kazuhiko-itani
+            </a>
+          </Text>
         </div>
       </Content>
-      About Page
     </Layout>
   )
 }
 
 export const query = graphql`
-  query MyIconImage {
-    MyIconImage: file(relativePath: { eq: "Icon.jpg" }) {
+  query ProfileImage {
+    ProfileImage: file(relativePath: { eq: "Icon.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid
@@ -66,6 +106,27 @@ const Content = styled.div`
   justify-content: space-between;
 `
 
-const MyIcon = styled(Img)`
-  width: 20%;
+const IconWrapper = styled.div`
+  width: 25%;
+`
+
+const Icon = styled(Img)`
+  width: 100%;
+`
+
+const StyledHeadingH3 = styled(HeadingH3)`
+  margin-top: 32px;
+`
+
+const Text = styled.p`
+  margin-top: 16px;
+`
+
+const List = styled.ul`
+  padding: 0;
+  margin-top: 16px;
+`
+
+const ListItem = styled.li`
+  margin-top: 12px;
 `

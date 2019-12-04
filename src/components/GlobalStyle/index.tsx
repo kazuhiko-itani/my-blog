@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    line-height: 2.0;
   }
 
   body,
@@ -29,8 +29,6 @@ export const GlobalStyle = createGlobalStyle`
   h3,
   h4,
   p,
-  ul[class],
-  ol[class],
   li,
   figure,
   figcaption,
@@ -72,6 +70,10 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   ul,
