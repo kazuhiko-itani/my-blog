@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: "test description",
-    author: "kazuhiko",
+    title: `Akashixi's Blog`,
+    description: "日々の仕事の中で学んだ技術的知見を発信しているブログです。",
+    author: "akashixi",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -52,7 +52,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/MainVisual.jpg`, // This path is relative to the root of the site.
+        icon: `src/images/MainVisual.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

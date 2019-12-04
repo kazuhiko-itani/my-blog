@@ -4347,6 +4347,11 @@ export type Unnamed_1_QueryVariables = {};
 
 export type Unnamed_1_Query = { ProfileImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
+export type SiteMetaDataQueryVariables = {};
+
+
+export type SiteMetaDataQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }>, MainVisualImageForMeta: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
+
 export type ProfileImageQueryVariables = {};
 
 
