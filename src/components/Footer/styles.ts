@@ -1,15 +1,16 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+import Breakpoint from "../GlobalStyle/breakpoint"
 
 const StyledFooter = styled.div`
   background-color: #251f1e;
-  height: 250px;
+  height: 100%;
 `
 
 const Inner = styled.div`
-  padding: 40px 74px;
+  padding: 40px 120px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     padding: 30px 20px;
   }
 `
@@ -17,6 +18,10 @@ const Inner = styled.div`
 const List = styled.ul`
   padding: 0;
   padding-bottom: 30px;
+`
+
+const ListItem = styled.li`
+  margin-top: 20px;
 `
 
 const Line = styled.hr`
@@ -40,6 +45,7 @@ export default {
   StyledFooter,
   Inner,
   List,
+  ListItem,
   Line,
   StyledLink,
   CopyRight,

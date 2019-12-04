@@ -1,16 +1,27 @@
 import React from "react"
 import styles from "./styles"
 
-const { StyledFooter, Inner, List, StyledLink, Line, CopyRight } = styles
+const {
+  StyledFooter,
+  Inner,
+  List,
+  ListItem,
+  StyledLink,
+  Line,
+  CopyRight,
+} = styles
 
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <Inner>
         <List>
-          <li>
-            <StyledLink to="/aoubt">ABOUT ME</StyledLink>
-          </li>
+          <ListItem>
+            <StyledLink to="/about">HOME</StyledLink>
+          </ListItem>
+          <ListItem>
+            <StyledLink to="/about">ABOUT ME</StyledLink>
+          </ListItem>
         </List>
         <Line />
         <CopyRight>&copy; 2019 Akashixi</CopyRight>
