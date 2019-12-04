@@ -27,6 +27,12 @@ const query = `
         publishedAt
         slug
         title
+        updatedAt
+        image {
+          fluid {
+            src
+          }
+        }
       }
     }
   }

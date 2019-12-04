@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const StyledHeadingH2 = styled.h2`
-  font-size: 20px;
+  font-size: 28px;
 `
 
 const StyledHeadingH3 = styled.h3`

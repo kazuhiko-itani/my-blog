@@ -22,7 +22,7 @@ export const PostCard: React.FC<Props> = props => {
   return (
     <Card className={props.className}>
       <div>
-        <Link to={props.slug}>
+        <Link to={`/posts/${props.slug}`}>
           <img src={props.image} />
         </Link>
       </div>

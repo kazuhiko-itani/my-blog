@@ -64,6 +64,7 @@ module.exports = {
         URL: false,
         File: false,
         require: false,
+        location: false,
       },
       settings: {
         react: {

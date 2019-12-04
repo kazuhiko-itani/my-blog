@@ -570,6 +570,7 @@ export type ContentfulPost = Node & {
   createdAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
   node_locale?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNode>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
 };
@@ -1340,6 +1341,7 @@ export type ContentfulPostFieldsEnum =
   'createdAt' |
   'updatedAt' |
   'node_locale' |
+  'tags' |
   'childContentfulPostDescriptionTextNode___id' |
   'childContentfulPostDescriptionTextNode___parent___id' |
   'childContentfulPostDescriptionTextNode___parent___parent___id' |
@@ -1491,6 +1493,7 @@ export type ContentfulPostFilterInput = {
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>,
 };
@@ -3435,6 +3438,7 @@ export type QueryContentfulPostArgs = {
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>
 };
@@ -3725,6 +3729,8 @@ export type SitePageContextPost = {
   publishedAt?: Maybe<Scalars['Date']>,
   slug?: Maybe<Scalars['String']>,
   title?: Maybe<Scalars['String']>,
+  updatedAt?: Maybe<Scalars['Date']>,
+  image?: Maybe<SitePageContextPostImage>,
 };
 
 export type SitePageContextPostContent = {
@@ -3750,6 +3756,24 @@ export type SitePageContextPostFilterInput = {
   publishedAt?: Maybe<DateQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
+  updatedAt?: Maybe<DateQueryOperatorInput>,
+  image?: Maybe<SitePageContextPostImageFilterInput>,
+};
+
+export type SitePageContextPostImage = {
+  fluid?: Maybe<SitePageContextPostImageFluid>,
+};
+
+export type SitePageContextPostImageFilterInput = {
+  fluid?: Maybe<SitePageContextPostImageFluidFilterInput>,
+};
+
+export type SitePageContextPostImageFluid = {
+  src?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostImageFluidFilterInput = {
+  src?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -3854,6 +3878,7 @@ export type SitePageFieldsEnum =
   'context___post___publishedAt' |
   'context___post___slug' |
   'context___post___title' |
+  'context___post___updatedAt' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |
