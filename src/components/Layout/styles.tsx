@@ -23,7 +23,7 @@ const Main = styled.main`
 
   @media (max-width: 767px) {
     width: 90%;
-    margin: 40px auto;
+    margin: 0 auto;
   }
 `
 

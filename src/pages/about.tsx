@@ -35,6 +35,10 @@ const AboutPage: React.FC<Props> = props => {
         <div>
           <HeadingH2>プロフィール</HeadingH2>
           <div>
+            <StyledHeadingH3>名前</StyledHeadingH3>
+            <Text>あかしぃ</Text>
+          </div>
+          <div>
             <StyledHeadingH3>経歴</StyledHeadingH3>
             <Text>
               2018年11月からWebエンジニア。コーヒーが好き。
@@ -104,14 +108,27 @@ export default AboutPage
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const IconWrapper = styled.div`
   width: 25%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `
 
 const Icon = styled(Img)`
   width: 100%;
+
+  @media (max-width: 767px) {
+    width: 80%;
+    margin: 0 auto;
+  }
 `
 
 const StyledHeadingH3 = styled(HeadingH3)`
