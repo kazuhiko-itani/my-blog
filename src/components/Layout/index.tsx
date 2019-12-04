@@ -19,9 +19,9 @@ type Props = {
 const Layout: React.FC<Props> = props => {
   const data: MainVisualImageQuery = useStaticQuery(graphql`
     query MainVisualImage {
-      MainVisualImage: file(relativePath: { eq: "MainVisual.jpg" }) {
+      MainVisualImage: file(relativePath: { eq: "MainVisual.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 1500) {
             ...GatsbyImageSharpFluid
           }
         }

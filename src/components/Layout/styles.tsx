@@ -3,8 +3,9 @@ import Img from "gatsby-image"
 import Breakpoint from "../GlobalStyle/breakpoint"
 
 const MainVisual = styled(Img)`
+  position: relative;
   width: 100%;
-  height: 300px;
+  height: 400px;
 `
 
 const MainLayout = styled.div`

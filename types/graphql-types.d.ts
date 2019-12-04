@@ -562,6 +562,7 @@ export type ContentfulPost = Node & {
   title?: Maybe<Scalars['String']>,
   slug?: Maybe<Scalars['String']>,
   publishedAt?: Maybe<Scalars['Date']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   image?: Maybe<ContentfulAsset>,
   description?: Maybe<ContentfulPostDescriptionTextNode>,
   content?: Maybe<ContentfulPostContentTextNode>,
@@ -570,7 +571,6 @@ export type ContentfulPost = Node & {
   createdAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
   node_locale?: Maybe<Scalars['String']>,
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNode>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
 };
@@ -1116,6 +1116,7 @@ export type ContentfulPostFieldsEnum =
   'title' |
   'slug' |
   'publishedAt' |
+  'tags' |
   'image___id' |
   'image___parent___id' |
   'image___parent___parent___id' |
@@ -1341,7 +1342,6 @@ export type ContentfulPostFieldsEnum =
   'createdAt' |
   'updatedAt' |
   'node_locale' |
-  'tags' |
   'childContentfulPostDescriptionTextNode___id' |
   'childContentfulPostDescriptionTextNode___parent___id' |
   'childContentfulPostDescriptionTextNode___parent___parent___id' |
@@ -1485,6 +1485,7 @@ export type ContentfulPostFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
   image?: Maybe<ContentfulAssetFilterInput>,
   description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   content?: Maybe<ContentfulPostContentTextNodeFilterInput>,
@@ -1493,7 +1494,6 @@ export type ContentfulPostFilterInput = {
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>,
 };
@@ -3430,6 +3430,7 @@ export type QueryContentfulPostArgs = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
   image?: Maybe<ContentfulAssetFilterInput>,
   description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   content?: Maybe<ContentfulPostContentTextNodeFilterInput>,
@@ -3438,7 +3439,6 @@ export type QueryContentfulPostArgs = {
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>
 };
