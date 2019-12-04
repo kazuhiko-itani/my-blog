@@ -38,7 +38,9 @@ const Layout: React.FC<Props> = props => {
       <MainVisual fluid={image} />
       <MainLayout>
         <Main>{props.children}</Main>
-        <StyledSideBar />
+        <StyledAside>
+          <SideBar />
+        </StyledAside>
       </MainLayout>
       <Footer />
     </>
@@ -47,7 +49,7 @@ const Layout: React.FC<Props> = props => {
 
 export default Layout
 
-const StyledSideBar = styled(SideBar)`
+const StyledAside = styled.aside`
   width: 20%;
 
   @media (max-width: 767px) {

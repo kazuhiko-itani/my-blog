@@ -58,6 +58,6 @@ const ContentWrapper = styled.div`
   }
 `
 
-const Content = styled.div`
+const Content = styled.article`
   margin-top: 30px;
 `

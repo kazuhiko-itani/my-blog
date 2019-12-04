@@ -7,14 +7,16 @@ const Header: React.FC = () => {
   return (
     <StyledHeader>
       <Inner>
-        <List>
-          <ListItem>
-            <StyledLink to="/">HOME</StyledLink>
-          </ListItem>
-          <ListItem>
-            <StyledLink to="/about">ABOUT ME</StyledLink>
-          </ListItem>
-        </List>
+        <nav>
+          <List>
+            <ListItem>
+              <StyledLink to="/">HOME</StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink to="/about">ABOUT ME</StyledLink>
+            </ListItem>
+          </List>
+        </nav>
       </Inner>
     </StyledHeader>
   )
