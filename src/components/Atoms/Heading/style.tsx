@@ -8,7 +8,12 @@ const StyledHeadingH3 = styled.h3`
   font-size: 16px;
 `
 
+const StyledHeadingH4 = styled.h4`
+  font-size: 14px;
+`
+
 export default {
   StyledHeadingH2,
   StyledHeadingH3,
+  StyledHeadingH4,
 }

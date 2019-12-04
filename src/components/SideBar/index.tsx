@@ -1,7 +1,9 @@
 import React from "react"
 import styles from "./styles"
+import styled from "styled-components"
 
 import ProfileCard from "../ProfileCard"
+import NewPosts from "../NewPosts"
 
 type Props = {
   className?: string
@@ -16,9 +18,16 @@ const SideBar: React.FC<Props> = props => {
 
   return (
     <Wrapper className={props.className}>
-      {!isAboutPage() && <ProfileCard />}
+      <Item>{!isAboutPage() && <ProfileCard />}</Item>
+      <Item>
+        <NewPosts />
+      </Item>
     </Wrapper>
   )
 }
 
 export default SideBar
+
+const Item = styled.div`
+  margin-bottom: 32px;
+`

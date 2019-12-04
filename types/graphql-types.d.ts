@@ -4334,6 +4334,14 @@ export type MainVisualImageQueryVariables = {};
 
 export type MainVisualImageQuery = { MainVisualImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
+export type NewPostsQueryVariables = {};
+
+
+export type NewPostsQuery = { allContentfulPost: { edges: Array<{ node: (
+        Pick<ContentfulPost, 'publishedAt' | 'slug' | 'title' | 'id'>
+        & { image: Maybe<{ fluid: Maybe<Pick<ContentfulFluid, 'src'>> }> }
+      ) }> } };
+
 export type Unnamed_1_QueryVariables = {};
 
 

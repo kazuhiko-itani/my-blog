@@ -4,7 +4,6 @@ import styled from "styled-components"
 import * as moment from "moment"
 
 import { HeadingH2 } from "../Atoms/Heading"
-import { TextLink } from "../Atoms/TextLink"
 import styles from "./style"
 
 type Props = {
