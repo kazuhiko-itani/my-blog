@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import color from "../GlobalStyle/color"
+import Breakpoint from "../GlobalStyle/breakpoint"
 
 const { secondary } = color
 
@@ -8,7 +9,7 @@ const Card = styled.div`
   height: 100%;
   margin-bottom: 40px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     width: 100%;
   }
 `

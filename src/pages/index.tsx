@@ -6,6 +6,7 @@ import * as moment from "moment"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import Breakpoint from "../components/GlobalStyle/breakpoint"
 import PostCard from "../components/PostCard"
 
 type Props = {
@@ -68,13 +69,13 @@ const Posts = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     display: block;
   }
 `
 
 const StyledPostCard = styled(PostCard)`
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     margin-bottom: 20px;
   }
 `

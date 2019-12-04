@@ -7,6 +7,7 @@ import Header from "../Header"
 import Footer from "../Footer"
 import SideBar from "../SideBar"
 import { GlobalStyle } from "../GlobalStyle"
+import Breakpoint from "../GlobalStyle/breakpoint"
 import { MainVisualImageQuery } from "../../../types/graphql-types"
 
 const { MainVisual, MainLayout, Main } = styles
@@ -52,7 +53,7 @@ export default Layout
 const StyledAside = styled.aside`
   width: 20%;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     width: 95%;
     margin: 0 auto;
   }

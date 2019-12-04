@@ -11,12 +11,12 @@ const { Wrapper } = styles
 
 const SideBar: React.FC<Props> = props => {
   const isAboutPage = (): boolean => {
-    return /^\/about\/$/.test(location.pathname)
+    return /^\/about/.test(location.pathname)
   }
 
   return (
     <Wrapper className={props.className}>
-      {!isAboutPage && <ProfileCard />}
+      {!isAboutPage() && <ProfileCard />}
     </Wrapper>
   )
 }

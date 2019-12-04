@@ -6,6 +6,7 @@ import { ProfileQuery } from "../../types/graphql-types"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import Breakpoint from "../components/GlobalStyle/breakpoint"
 import { HeadingH2, HeadingH3 } from "../components/Atoms/Heading"
 
 type Props = {
@@ -109,7 +110,7 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     flex-direction: column;
   }
 `
@@ -117,7 +118,7 @@ const Content = styled.div`
 const IconWrapper = styled.div`
   width: 25%;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     width: 100%;
   }
 `
@@ -125,7 +126,7 @@ const IconWrapper = styled.div`
 const Icon = styled(Img)`
   width: 100%;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     width: 80%;
     margin: 0 auto;
   }
