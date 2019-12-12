@@ -4,6 +4,7 @@ import { PostContext } from "../../gatsby-node"
 
 import { PostLayout } from "../components/PostLayout"
 import { HeadingH2 } from "../components/Atoms/Heading"
+import Breakpoint from "../components/GlobalStyle/breakpoint"
 
 type Props = {
   pathContext: PostContext
@@ -15,9 +16,6 @@ const Post: React.FC<Props> = ({ pathContext }) => {
 
   return (
     <PostLayout>
-      <ImageWrapper>
-        <Image src={pathContext.post.image.fluid.src} />
-      </ImageWrapper>
       <ContentWrapper>
         <HeadingH2>{postTitle}</HeadingH2>
         <Content>
@@ -30,29 +28,11 @@ const Post: React.FC<Props> = ({ pathContext }) => {
 
 export default Post
 
-const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 767px) {
-    width: 100vw;
-  }
-`
-
-const Image = styled.img`
-  width: 50%;
-  height: 300px;
-
-  @media (max-width: 767px) {
-    width: 100%;
-  }
-`
-
 const ContentWrapper = styled.div`
   width: 50%;
   margin: 50px auto;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${Breakpoint.sp}) {
     width: 100%;
     margin: 50px 20px;
   }
