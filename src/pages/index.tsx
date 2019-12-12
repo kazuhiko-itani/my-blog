@@ -38,7 +38,7 @@ const IndexPage: React.FC<Props> = props => {
 
 export const query = graphql`
   query AllPost {
-    allContentfulPost {
+    allContentfulPost(sort: { order: DESC, fields: publishedAt }) {
       edges {
         node {
           content {
