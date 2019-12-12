@@ -6,6 +6,7 @@ import ProfileCard from "../ProfileCard"
 import NewPosts from "../NewPosts"
 
 type Props = {
+  pathname: string
   className?: string
 }
 
@@ -13,7 +14,7 @@ const { Wrapper } = styles
 
 const SideBar: React.FC<Props> = props => {
   const isAboutPage = (): boolean => {
-    return /^\/about/.test(location.pathname)
+    return /^\/about/.test(props.pathname)
   }
 
   return (

@@ -10,12 +10,13 @@ import Breakpoint from "../components/GlobalStyle/breakpoint"
 import PostCard from "../components/PostCard"
 
 type Props = {
+  path: string
   data: AllPostQuery
 }
 
 const IndexPage: React.FC<Props> = props => {
   return (
-    <Layout>
+    <Layout pathname={props.path}>
       <SEO title="Home" />
       <Posts>
         {props.data.allContentfulPost.edges.map(edge => {

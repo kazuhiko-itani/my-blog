@@ -10,6 +10,7 @@ import Breakpoint from "../components/GlobalStyle/breakpoint"
 import { HeadingH2, HeadingH3 } from "../components/Atoms/Heading"
 
 type Props = {
+  path: string
   data: ProfileQuery
 }
 
@@ -27,7 +28,7 @@ const AboutPage: React.FC<Props> = props => {
   ]
 
   return (
-    <Layout>
+    <Layout pathname={props.path}>
       <SEO title="About" />
       <Content>
         <IconWrapper>

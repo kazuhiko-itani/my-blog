@@ -13,6 +13,7 @@ import { MainVisualImageQuery } from "../../../types/graphql-types"
 const { MainVisual, MainLayout, Main } = styles
 
 type Props = {
+  pathname: string
   children: React.ReactNode
 }
 
@@ -40,7 +41,7 @@ const Layout: React.FC<Props> = props => {
       <MainLayout>
         <Main>{props.children}</Main>
         <StyledAside>
-          <SideBar />
+          <SideBar pathname={props.pathname} />
         </StyledAside>
       </MainLayout>
       <Footer />
