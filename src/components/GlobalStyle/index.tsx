@@ -38,6 +38,15 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  h2 {
+    font-size: 24px;
+    margin: 12px 0;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
   article,
   aside,
   details,
@@ -91,4 +100,7 @@ export const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
 
+  pre[class*="language-"] {
+    margin: 20px 0 !important;
+  }
 `
