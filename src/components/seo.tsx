@@ -71,6 +71,10 @@ const SEO: React.FC<Props> = props => {
     props.description || site.siteMetadata.description
   const lang = props.lang || "ja"
 
+  const metaImagePath = `${props.url.split("/")[0]}//${
+    props.url.split("/")[2]
+  }${metaImage}`
+
   return (
     <Helmet
       htmlAttributes={{
@@ -97,7 +101,7 @@ const SEO: React.FC<Props> = props => {
         },
         {
           property: `og:image`,
-          content: metaImage,
+          content: metaImagePath,
         },
         {
           property: `og:url`,
