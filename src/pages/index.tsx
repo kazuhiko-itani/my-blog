@@ -19,7 +19,11 @@ type Props = {
 
 const IndexPage: React.FC<Props> = props => {
   return (
-    <Layout url={props.location.href} pathname={props.path}>
+    <Layout
+      url={props.location.href}
+      pathname={props.path}
+      title="トップページ"
+    >
       <SEO title="Home" url={props.location.href} />
       <Posts>
         {props.data.allContentfulPost.edges.map(edge => {

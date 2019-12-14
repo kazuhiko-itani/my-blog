@@ -14,6 +14,7 @@ const { Main } = styles
 
 type Props = {
   url: string
+  title: string
   children: React.ReactNode
 }
 
@@ -27,7 +28,7 @@ export const PostLayout: React.FC<Props> = props => {
       <GlobalStyle />
       <Header />
       <Main>{props.children}</Main>
-      <StyledSocialButtons url={props.url} size={40} />
+      <StyledSocialButtons url={props.url} size={40} title={props.title} />
       <Footer />
     </>
   )

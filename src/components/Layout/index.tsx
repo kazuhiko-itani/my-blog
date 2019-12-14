@@ -16,6 +16,7 @@ const { MainVisual, MainLayout, Main } = styles
 type Props = {
   url: string
   pathname: string
+  title: string
   children: React.ReactNode
 }
 
@@ -46,7 +47,7 @@ const Layout: React.FC<Props> = props => {
           <SideBar pathname={props.pathname} />
         </StyledAside>
       </MainLayout>
-      <StyledSocialButtons url={props.url} size={40} />
+      <StyledSocialButtons url={props.url} size={40} title={props.title} />
       <Footer />
     </>
   )

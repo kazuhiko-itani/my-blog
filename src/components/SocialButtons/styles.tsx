@@ -4,6 +4,7 @@ import { FacebookShareButton, TwitterShareButton } from "react-share"
 const ShareText = styled.p`
   font-weight: bold;
   font-size: 16px;
+  margin-left: 2px;
   text-align: center;
 `
 

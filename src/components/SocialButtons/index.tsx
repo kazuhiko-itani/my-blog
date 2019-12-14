@@ -5,6 +5,7 @@ import { FacebookIcon, TwitterIcon } from "react-share"
 type Props = {
   url: string
   size: number
+  title: string
   className?: string
 }
 
@@ -23,7 +24,11 @@ export const SocialButtons: React.FC<Props> = props => {
         <StyledFacebookShareButton url={props.url}>
           <FacebookIcon size={40} round />
         </StyledFacebookShareButton>
-        <StyledTwitterShareButton url={props.url}>
+        <StyledTwitterShareButton
+          url={props.url}
+          title={`${props.title} | あかしぃの技術ブログ`}
+          via="@akashi__akashi"
+        >
           <TwitterIcon size={40} round />
         </StyledTwitterShareButton>
       </SocialButtonArea>

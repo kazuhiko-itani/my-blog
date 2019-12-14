@@ -19,7 +19,7 @@ const Post: React.FC<Props> = props => {
   const contentHtml = props.pathContext.post.content.childMarkdownRemark.html
 
   return (
-    <PostLayout url={props.location.href}>
+    <PostLayout url={props.location.href} title={postTitle}>
       <SEO
         title={postTitle}
         description={props.pathContext.post.description.description}
