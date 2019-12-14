@@ -11,12 +11,15 @@ import PostCard from "../components/PostCard"
 
 type Props = {
   path: string
+  location: {
+    href: string
+  }
   data: AllPostQuery
 }
 
 const IndexPage: React.FC<Props> = props => {
   return (
-    <Layout pathname={props.path}>
+    <Layout url={props.location.href} pathname={props.path}>
       <SEO title="Home" />
       <Posts>
         {props.data.allContentfulPost.edges.map(edge => {

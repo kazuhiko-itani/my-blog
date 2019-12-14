@@ -8,14 +8,17 @@ import Breakpoint from "../components/GlobalStyle/breakpoint"
 
 type Props = {
   pathContext: PostContext
+  location: {
+    href: string
+  }
 }
 
-const Post: React.FC<Props> = ({ pathContext }) => {
-  const postTitle = pathContext.post.title
-  const contentHtml = pathContext.post.content.childMarkdownRemark.html
+const Post: React.FC<Props> = props => {
+  const postTitle = props.pathContext.post.title
+  const contentHtml = props.pathContext.post.content.childMarkdownRemark.html
 
   return (
-    <PostLayout>
+    <PostLayout url={props.location.href}>
       <ContentWrapper>
         <Title>{postTitle}</Title>
         <Content>

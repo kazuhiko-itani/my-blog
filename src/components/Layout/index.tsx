@@ -9,10 +9,12 @@ import SideBar from "../SideBar"
 import { GlobalStyle } from "../GlobalStyle"
 import Breakpoint from "../GlobalStyle/breakpoint"
 import { MainVisualImageQuery } from "../../../types/graphql-types"
+import { SocialButtons } from "../SocialButtons"
 
 const { MainVisual, MainLayout, Main } = styles
 
 type Props = {
+  url: string
   pathname: string
   children: React.ReactNode
 }
@@ -44,6 +46,7 @@ const Layout: React.FC<Props> = props => {
           <SideBar pathname={props.pathname} />
         </StyledAside>
       </MainLayout>
+      <StyledSocialButtons url={props.url} size={40} />
       <Footer />
     </>
   )
@@ -58,4 +61,8 @@ const StyledAside = styled.aside`
     width: 95%;
     margin: 0 auto;
   }
+`
+
+const StyledSocialButtons = styled(SocialButtons)`
+  margin-bottom: 40px;
 `

@@ -11,7 +11,7 @@ const MainVisual = styled(Img)`
 const MainLayout = styled.div`
   display: flex;
   justify-content: center;
-  margin: 50px 0 120px;
+  margin: 50px 0 20px;
 
   @media (max-width: ${Breakpoint.sp}) {
     flex-direction: column;
