@@ -10,6 +10,9 @@ import Breakpoint from "../components/GlobalStyle/breakpoint"
 import { HeadingH2, HeadingH3 } from "../components/Atoms/Heading"
 
 type Props = {
+  location: {
+    href: string
+  }
   path: string
   data: ProfileQuery
 }
@@ -28,7 +31,7 @@ const AboutPage: React.FC<Props> = props => {
   ]
 
   return (
-    <Layout pathname={props.path}>
+    <Layout pathname={props.path} url={props.location.href}>
       <SEO title="About" />
       <Content>
         <IconWrapper>
@@ -118,6 +121,7 @@ const Content = styled.div`
 
 const IconWrapper = styled.div`
   width: 25%;
+  margin-right: 60px;
 
   @media (max-width: ${Breakpoint.sp}) {
     width: 100%;

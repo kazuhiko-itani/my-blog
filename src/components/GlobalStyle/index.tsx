@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
-    line-height: 2.0;
+    line-height: 1.8;
   }
 
   body,

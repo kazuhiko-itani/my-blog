@@ -31,7 +31,7 @@ const Image = styled.img`
 `
 
 const Title = styled(HeadingH4)`
-  margin-top: 2px;
+  margin-top: 8px;
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 3;
@@ -45,6 +45,7 @@ const TitleLink = styled(Link)`
 const PublishedAt = styled.div`
   font-size: 12px;
   text-align: right;
+  margin-bottom: 4px;
 `
 
 const Line = styled.hr`
