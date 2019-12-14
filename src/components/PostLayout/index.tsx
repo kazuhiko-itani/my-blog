@@ -1,9 +1,6 @@
 import React from "react"
 import styles from "./styles"
 import styled from "styled-components"
-import Prism from "prismjs"
-import "prismjs/components/prism-typescript.min"
-import "../../assets/css/prism.css"
 
 import Header from "../Header"
 import Footer from "../Footer"
@@ -19,10 +16,6 @@ type Props = {
 }
 
 export const PostLayout: React.FC<Props> = props => {
-  React.useEffect(() => {
-    Prism.highlightAll()
-  })
-
   return (
     <>
       <GlobalStyle />

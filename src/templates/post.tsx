@@ -7,6 +7,13 @@ import { PostLayout } from "../components/PostLayout"
 import { HeadingH2 } from "../components/Atoms/Heading"
 import Breakpoint from "../components/GlobalStyle/breakpoint"
 
+import Prism from "prismjs"
+import "prismjs/components/prism-jsx.min"
+import "prismjs/components/prism-tsx.min"
+import "prismjs/components/prism-typescript.min"
+import "prismjs/components/prism-json.min"
+import "../assets/css/prism.css"
+
 type Props = {
   pathContext: PostContext
   location: {
@@ -15,6 +22,10 @@ type Props = {
 }
 
 const Post: React.FC<Props> = props => {
+  React.useEffect(() => {
+    Prism.highlightAll()
+  })
+
   const postTitle = props.pathContext.post.title
   const contentHtml = props.pathContext.post.content.childMarkdownRemark.html
 
