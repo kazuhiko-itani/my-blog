@@ -26,7 +26,7 @@ type Meta = NonPropertyMeta1 | NonNameMeta2
 
 type Props = {
   title: string
-  url: string
+  url: string | undefined
   description?: string
   lang?: string
   meta?: Meta[]
@@ -71,9 +71,12 @@ const SEO: React.FC<Props> = props => {
     props.description || site.siteMetadata.description
   const lang = props.lang || "ja"
 
-  const metaImagePath = `${props.url.split("/")[0]}//${
-    props.url.split("/")[2]
-  }${metaImage}`
+  let metaImagePath = ""
+  if (props.url) {
+    metaImagePath = `${props.url.split("/")[0]}//${
+      props.url.split("/")[2]
+    }${metaImage}`
+  }
 
   return (
     <Helmet
