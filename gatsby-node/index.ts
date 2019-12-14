@@ -27,6 +27,9 @@ const query = `
         publishedAt
         slug
         title
+        description {
+          description
+        }
         updatedAt
         image {
           fluid {

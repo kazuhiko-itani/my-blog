@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { PostContext } from "../../gatsby-node"
 
+import SEO from "../components/seo"
 import { PostLayout } from "../components/PostLayout"
 import { HeadingH2 } from "../components/Atoms/Heading"
 import Breakpoint from "../components/GlobalStyle/breakpoint"
@@ -19,6 +20,11 @@ const Post: React.FC<Props> = props => {
 
   return (
     <PostLayout url={props.location.href}>
+      <SEO
+        title={postTitle}
+        description={props.pathContext.post.description.description}
+        url={props.location.href}
+      />
       <ContentWrapper>
         <Title>{postTitle}</Title>
         <Content>

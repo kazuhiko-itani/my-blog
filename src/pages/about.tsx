@@ -32,7 +32,7 @@ const AboutPage: React.FC<Props> = props => {
 
   return (
     <Layout pathname={props.path} url={props.location.href}>
-      <SEO title="About" />
+      <SEO title="About" url={props.location.href} />
       <Content>
         <IconWrapper>
           <Icon fluid={image} />

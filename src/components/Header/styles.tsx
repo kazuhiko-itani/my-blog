@@ -24,6 +24,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
+  font-size: 14px;
   margin-right: 32px;
 
   @media (max-width: ${Breakpoint.sp}) {

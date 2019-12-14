@@ -20,7 +20,7 @@ type Props = {
 const IndexPage: React.FC<Props> = props => {
   return (
     <Layout url={props.location.href} pathname={props.path}>
-      <SEO title="Home" />
+      <SEO title="Home" url={props.location.href} />
       <Posts>
         {props.data.allContentfulPost.edges.map(edge => {
           return (

@@ -3732,6 +3732,7 @@ export type SitePageContextPost = {
   title?: Maybe<Scalars['String']>,
   updatedAt?: Maybe<Scalars['Date']>,
   image?: Maybe<SitePageContextPostImage>,
+  description?: Maybe<SitePageContextPostDescription>,
 };
 
 export type SitePageContextPostContent = {
@@ -3752,6 +3753,14 @@ export type SitePageContextPostContentFilterInput = {
   content?: Maybe<StringQueryOperatorInput>,
 };
 
+export type SitePageContextPostDescription = {
+  description?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostDescriptionFilterInput = {
+  description?: Maybe<StringQueryOperatorInput>,
+};
+
 export type SitePageContextPostFilterInput = {
   content?: Maybe<SitePageContextPostContentFilterInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
@@ -3759,6 +3768,7 @@ export type SitePageContextPostFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   image?: Maybe<SitePageContextPostImageFilterInput>,
+  description?: Maybe<SitePageContextPostDescriptionFilterInput>,
 };
 
 export type SitePageContextPostImage = {
@@ -3880,6 +3890,7 @@ export type SitePageFieldsEnum =
   'context___post___slug' |
   'context___post___title' |
   'context___post___updatedAt' |
+  'context___post___description___description' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |

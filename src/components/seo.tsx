@@ -25,10 +25,11 @@ interface NonNameMeta2 {
 type Meta = NonPropertyMeta1 | NonNameMeta2
 
 type Props = {
+  title: string
+  url: string
   description?: string
   lang?: string
   meta?: Meta[]
-  title: string
 }
 
 const SEO: React.FC<Props> = props => {
@@ -99,6 +100,10 @@ const SEO: React.FC<Props> = props => {
           content: metaImage,
         },
         {
+          property: `og:url`,
+          content: props.url,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -113,6 +118,10 @@ const SEO: React.FC<Props> = props => {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:site`,
+          content: `@akashi__akashi`,
         },
       ].concat(metaData)}
     />
