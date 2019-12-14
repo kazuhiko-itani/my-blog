@@ -27,7 +27,7 @@ export const SocialButtons: React.FC<Props> = props => {
         <StyledTwitterShareButton
           url={props.url}
           title={`${props.title} | あかしぃの技術ブログ`}
-          via="@akashi__akashi"
+          via="akashi__akashi"
         >
           <TwitterIcon size={40} round />
         </StyledTwitterShareButton>
