@@ -562,17 +562,17 @@ export type ContentfulPost = Node & {
   title?: Maybe<Scalars['String']>,
   slug?: Maybe<Scalars['String']>,
   publishedAt?: Maybe<Scalars['Date']>,
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   image?: Maybe<ContentfulAsset>,
+  description?: Maybe<ContentfulPostDescriptionTextNode>,
   content?: Maybe<ContentfulPostContentTextNode>,
   spaceId?: Maybe<Scalars['String']>,
   contentful_id?: Maybe<Scalars['String']>,
   createdAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
   node_locale?: Maybe<Scalars['String']>,
-  description?: Maybe<ContentfulPostDescriptionTextNode>,
-  childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNode>,
+  childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
 };
 
 
@@ -1116,7 +1116,6 @@ export type ContentfulPostFieldsEnum =
   'title' |
   'slug' |
   'publishedAt' |
-  'tags' |
   'image___id' |
   'image___parent___id' |
   'image___parent___parent___id' |
@@ -1203,6 +1202,73 @@ export type ContentfulPostFieldsEnum =
   'image___resize___width' |
   'image___resize___height' |
   'image___resize___aspectRatio' |
+  'description___id' |
+  'description___parent___id' |
+  'description___parent___parent___id' |
+  'description___parent___parent___children' |
+  'description___parent___children' |
+  'description___parent___children___id' |
+  'description___parent___children___children' |
+  'description___parent___internal___content' |
+  'description___parent___internal___contentDigest' |
+  'description___parent___internal___description' |
+  'description___parent___internal___fieldOwners' |
+  'description___parent___internal___ignoreType' |
+  'description___parent___internal___mediaType' |
+  'description___parent___internal___owner' |
+  'description___parent___internal___type' |
+  'description___children' |
+  'description___children___id' |
+  'description___children___parent___id' |
+  'description___children___parent___children' |
+  'description___children___children' |
+  'description___children___children___id' |
+  'description___children___children___children' |
+  'description___children___internal___content' |
+  'description___children___internal___contentDigest' |
+  'description___children___internal___description' |
+  'description___children___internal___fieldOwners' |
+  'description___children___internal___ignoreType' |
+  'description___children___internal___mediaType' |
+  'description___children___internal___owner' |
+  'description___children___internal___type' |
+  'description___internal___content' |
+  'description___internal___contentDigest' |
+  'description___internal___description' |
+  'description___internal___fieldOwners' |
+  'description___internal___ignoreType' |
+  'description___internal___mediaType' |
+  'description___internal___owner' |
+  'description___internal___type' |
+  'description___description' |
+  'description___childMarkdownRemark___id' |
+  'description___childMarkdownRemark___frontmatter___title' |
+  'description___childMarkdownRemark___excerpt' |
+  'description___childMarkdownRemark___rawMarkdownBody' |
+  'description___childMarkdownRemark___html' |
+  'description___childMarkdownRemark___htmlAst' |
+  'description___childMarkdownRemark___excerptAst' |
+  'description___childMarkdownRemark___headings' |
+  'description___childMarkdownRemark___headings___value' |
+  'description___childMarkdownRemark___headings___depth' |
+  'description___childMarkdownRemark___timeToRead' |
+  'description___childMarkdownRemark___tableOfContents' |
+  'description___childMarkdownRemark___wordCount___paragraphs' |
+  'description___childMarkdownRemark___wordCount___sentences' |
+  'description___childMarkdownRemark___wordCount___words' |
+  'description___childMarkdownRemark___parent___id' |
+  'description___childMarkdownRemark___parent___children' |
+  'description___childMarkdownRemark___children' |
+  'description___childMarkdownRemark___children___id' |
+  'description___childMarkdownRemark___children___children' |
+  'description___childMarkdownRemark___internal___content' |
+  'description___childMarkdownRemark___internal___contentDigest' |
+  'description___childMarkdownRemark___internal___description' |
+  'description___childMarkdownRemark___internal___fieldOwners' |
+  'description___childMarkdownRemark___internal___ignoreType' |
+  'description___childMarkdownRemark___internal___mediaType' |
+  'description___childMarkdownRemark___internal___owner' |
+  'description___childMarkdownRemark___internal___type' |
   'content___id' |
   'content___parent___id' |
   'content___parent___parent___id' |
@@ -1275,140 +1341,7 @@ export type ContentfulPostFieldsEnum =
   'createdAt' |
   'updatedAt' |
   'node_locale' |
-  'description___id' |
-  'description___parent___id' |
-  'description___parent___parent___id' |
-  'description___parent___parent___children' |
-  'description___parent___children' |
-  'description___parent___children___id' |
-  'description___parent___children___children' |
-  'description___parent___internal___content' |
-  'description___parent___internal___contentDigest' |
-  'description___parent___internal___description' |
-  'description___parent___internal___fieldOwners' |
-  'description___parent___internal___ignoreType' |
-  'description___parent___internal___mediaType' |
-  'description___parent___internal___owner' |
-  'description___parent___internal___type' |
-  'description___children' |
-  'description___children___id' |
-  'description___children___parent___id' |
-  'description___children___parent___children' |
-  'description___children___children' |
-  'description___children___children___id' |
-  'description___children___children___children' |
-  'description___children___internal___content' |
-  'description___children___internal___contentDigest' |
-  'description___children___internal___description' |
-  'description___children___internal___fieldOwners' |
-  'description___children___internal___ignoreType' |
-  'description___children___internal___mediaType' |
-  'description___children___internal___owner' |
-  'description___children___internal___type' |
-  'description___internal___content' |
-  'description___internal___contentDigest' |
-  'description___internal___description' |
-  'description___internal___fieldOwners' |
-  'description___internal___ignoreType' |
-  'description___internal___mediaType' |
-  'description___internal___owner' |
-  'description___internal___type' |
-  'description___description' |
-  'description___childMarkdownRemark___id' |
-  'description___childMarkdownRemark___frontmatter___title' |
-  'description___childMarkdownRemark___excerpt' |
-  'description___childMarkdownRemark___rawMarkdownBody' |
-  'description___childMarkdownRemark___html' |
-  'description___childMarkdownRemark___htmlAst' |
-  'description___childMarkdownRemark___excerptAst' |
-  'description___childMarkdownRemark___headings' |
-  'description___childMarkdownRemark___headings___value' |
-  'description___childMarkdownRemark___headings___depth' |
-  'description___childMarkdownRemark___timeToRead' |
-  'description___childMarkdownRemark___tableOfContents' |
-  'description___childMarkdownRemark___wordCount___paragraphs' |
-  'description___childMarkdownRemark___wordCount___sentences' |
-  'description___childMarkdownRemark___wordCount___words' |
-  'description___childMarkdownRemark___parent___id' |
-  'description___childMarkdownRemark___parent___children' |
-  'description___childMarkdownRemark___children' |
-  'description___childMarkdownRemark___children___id' |
-  'description___childMarkdownRemark___children___children' |
-  'description___childMarkdownRemark___internal___content' |
-  'description___childMarkdownRemark___internal___contentDigest' |
-  'description___childMarkdownRemark___internal___description' |
-  'description___childMarkdownRemark___internal___fieldOwners' |
-  'description___childMarkdownRemark___internal___ignoreType' |
-  'description___childMarkdownRemark___internal___mediaType' |
-  'description___childMarkdownRemark___internal___owner' |
-  'description___childMarkdownRemark___internal___type' |
-  'childContentfulPostContentTextNode___id' |
-  'childContentfulPostContentTextNode___parent___id' |
-  'childContentfulPostContentTextNode___parent___parent___id' |
-  'childContentfulPostContentTextNode___parent___parent___children' |
-  'childContentfulPostContentTextNode___parent___children' |
-  'childContentfulPostContentTextNode___parent___children___id' |
-  'childContentfulPostContentTextNode___parent___children___children' |
-  'childContentfulPostContentTextNode___parent___internal___content' |
-  'childContentfulPostContentTextNode___parent___internal___contentDigest' |
-  'childContentfulPostContentTextNode___parent___internal___description' |
-  'childContentfulPostContentTextNode___parent___internal___fieldOwners' |
-  'childContentfulPostContentTextNode___parent___internal___ignoreType' |
-  'childContentfulPostContentTextNode___parent___internal___mediaType' |
-  'childContentfulPostContentTextNode___parent___internal___owner' |
-  'childContentfulPostContentTextNode___parent___internal___type' |
-  'childContentfulPostContentTextNode___children' |
-  'childContentfulPostContentTextNode___children___id' |
-  'childContentfulPostContentTextNode___children___parent___id' |
-  'childContentfulPostContentTextNode___children___parent___children' |
-  'childContentfulPostContentTextNode___children___children' |
-  'childContentfulPostContentTextNode___children___children___id' |
-  'childContentfulPostContentTextNode___children___children___children' |
-  'childContentfulPostContentTextNode___children___internal___content' |
-  'childContentfulPostContentTextNode___children___internal___contentDigest' |
-  'childContentfulPostContentTextNode___children___internal___description' |
-  'childContentfulPostContentTextNode___children___internal___fieldOwners' |
-  'childContentfulPostContentTextNode___children___internal___ignoreType' |
-  'childContentfulPostContentTextNode___children___internal___mediaType' |
-  'childContentfulPostContentTextNode___children___internal___owner' |
-  'childContentfulPostContentTextNode___children___internal___type' |
-  'childContentfulPostContentTextNode___internal___content' |
-  'childContentfulPostContentTextNode___internal___contentDigest' |
-  'childContentfulPostContentTextNode___internal___description' |
-  'childContentfulPostContentTextNode___internal___fieldOwners' |
-  'childContentfulPostContentTextNode___internal___ignoreType' |
-  'childContentfulPostContentTextNode___internal___mediaType' |
-  'childContentfulPostContentTextNode___internal___owner' |
-  'childContentfulPostContentTextNode___internal___type' |
-  'childContentfulPostContentTextNode___content' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___id' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___frontmatter___title' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___excerpt' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___rawMarkdownBody' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___html' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___htmlAst' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___excerptAst' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___headings' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___headings___value' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___headings___depth' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___timeToRead' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___tableOfContents' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___wordCount___paragraphs' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___wordCount___sentences' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___wordCount___words' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___parent___id' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___parent___children' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___children' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___children___id' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___children___children' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___content' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___contentDigest' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___description' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___fieldOwners' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___ignoreType' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___mediaType' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___owner' |
-  'childContentfulPostContentTextNode___childMarkdownRemark___internal___type' |
+  'tags' |
   'childContentfulPostDescriptionTextNode___id' |
   'childContentfulPostDescriptionTextNode___parent___id' |
   'childContentfulPostDescriptionTextNode___parent___parent___id' |
@@ -1475,7 +1408,74 @@ export type ContentfulPostFieldsEnum =
   'childContentfulPostDescriptionTextNode___childMarkdownRemark___internal___ignoreType' |
   'childContentfulPostDescriptionTextNode___childMarkdownRemark___internal___mediaType' |
   'childContentfulPostDescriptionTextNode___childMarkdownRemark___internal___owner' |
-  'childContentfulPostDescriptionTextNode___childMarkdownRemark___internal___type';
+  'childContentfulPostDescriptionTextNode___childMarkdownRemark___internal___type' |
+  'childContentfulPostContentTextNode___id' |
+  'childContentfulPostContentTextNode___parent___id' |
+  'childContentfulPostContentTextNode___parent___parent___id' |
+  'childContentfulPostContentTextNode___parent___parent___children' |
+  'childContentfulPostContentTextNode___parent___children' |
+  'childContentfulPostContentTextNode___parent___children___id' |
+  'childContentfulPostContentTextNode___parent___children___children' |
+  'childContentfulPostContentTextNode___parent___internal___content' |
+  'childContentfulPostContentTextNode___parent___internal___contentDigest' |
+  'childContentfulPostContentTextNode___parent___internal___description' |
+  'childContentfulPostContentTextNode___parent___internal___fieldOwners' |
+  'childContentfulPostContentTextNode___parent___internal___ignoreType' |
+  'childContentfulPostContentTextNode___parent___internal___mediaType' |
+  'childContentfulPostContentTextNode___parent___internal___owner' |
+  'childContentfulPostContentTextNode___parent___internal___type' |
+  'childContentfulPostContentTextNode___children' |
+  'childContentfulPostContentTextNode___children___id' |
+  'childContentfulPostContentTextNode___children___parent___id' |
+  'childContentfulPostContentTextNode___children___parent___children' |
+  'childContentfulPostContentTextNode___children___children' |
+  'childContentfulPostContentTextNode___children___children___id' |
+  'childContentfulPostContentTextNode___children___children___children' |
+  'childContentfulPostContentTextNode___children___internal___content' |
+  'childContentfulPostContentTextNode___children___internal___contentDigest' |
+  'childContentfulPostContentTextNode___children___internal___description' |
+  'childContentfulPostContentTextNode___children___internal___fieldOwners' |
+  'childContentfulPostContentTextNode___children___internal___ignoreType' |
+  'childContentfulPostContentTextNode___children___internal___mediaType' |
+  'childContentfulPostContentTextNode___children___internal___owner' |
+  'childContentfulPostContentTextNode___children___internal___type' |
+  'childContentfulPostContentTextNode___internal___content' |
+  'childContentfulPostContentTextNode___internal___contentDigest' |
+  'childContentfulPostContentTextNode___internal___description' |
+  'childContentfulPostContentTextNode___internal___fieldOwners' |
+  'childContentfulPostContentTextNode___internal___ignoreType' |
+  'childContentfulPostContentTextNode___internal___mediaType' |
+  'childContentfulPostContentTextNode___internal___owner' |
+  'childContentfulPostContentTextNode___internal___type' |
+  'childContentfulPostContentTextNode___content' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___id' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___frontmatter___title' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___excerpt' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___rawMarkdownBody' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___html' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___htmlAst' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___excerptAst' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___headings' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___headings___value' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___headings___depth' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___timeToRead' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___tableOfContents' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___wordCount___paragraphs' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___wordCount___sentences' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___wordCount___words' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___parent___id' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___parent___children' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___children' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___children___id' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___children___children' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___content' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___contentDigest' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___description' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___fieldOwners' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___ignoreType' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___mediaType' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___owner' |
+  'childContentfulPostContentTextNode___childMarkdownRemark___internal___type';
 
 export type ContentfulPostFilterInput = {
   id?: Maybe<StringQueryOperatorInput>,
@@ -1485,17 +1485,17 @@ export type ContentfulPostFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   image?: Maybe<ContentfulAssetFilterInput>,
+  description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   content?: Maybe<ContentfulPostContentTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
-  description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
-  childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
+  childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>,
 };
 
 export type ContentfulPostGroupConnection = {
@@ -3175,10 +3175,10 @@ export type Query = {
   allContentfulContentType: ContentfulContentTypeConnection,
   contentfulPost?: Maybe<ContentfulPost>,
   allContentfulPost: ContentfulPostConnection,
-  contentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
-  allContentfulPostContentTextNode: ContentfulPostContentTextNodeConnection,
   contentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNode>,
   allContentfulPostDescriptionTextNode: ContentfulPostDescriptionTextNodeConnection,
+  contentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
+  allContentfulPostContentTextNode: ContentfulPostContentTextNodeConnection,
   contentfulAsset?: Maybe<ContentfulAsset>,
   allContentfulAsset: ContentfulAssetConnection,
 };
@@ -3431,41 +3431,23 @@ export type QueryContentfulPostArgs = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   image?: Maybe<ContentfulAssetFilterInput>,
+  description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   content?: Maybe<ContentfulPostContentTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
-  description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
-  childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>,
-  childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>
+  tags?: Maybe<StringQueryOperatorInput>,
+  childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
+  childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>
 };
 
 
 export type QueryAllContentfulPostArgs = {
   filter?: Maybe<ContentfulPostFilterInput>,
   sort?: Maybe<ContentfulPostSortInput>,
-  skip?: Maybe<Scalars['Int']>,
-  limit?: Maybe<Scalars['Int']>
-};
-
-
-export type QueryContentfulPostContentTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>,
-  parent?: Maybe<NodeFilterInput>,
-  children?: Maybe<NodeFilterListInput>,
-  internal?: Maybe<InternalFilterInput>,
-  content?: Maybe<StringQueryOperatorInput>,
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
-};
-
-
-export type QueryAllContentfulPostContentTextNodeArgs = {
-  filter?: Maybe<ContentfulPostContentTextNodeFilterInput>,
-  sort?: Maybe<ContentfulPostContentTextNodeSortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };
@@ -3484,6 +3466,24 @@ export type QueryContentfulPostDescriptionTextNodeArgs = {
 export type QueryAllContentfulPostDescriptionTextNodeArgs = {
   filter?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   sort?: Maybe<ContentfulPostDescriptionTextNodeSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QueryContentfulPostContentTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  content?: Maybe<StringQueryOperatorInput>,
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
+};
+
+
+export type QueryAllContentfulPostContentTextNodeArgs = {
+  filter?: Maybe<ContentfulPostContentTextNodeFilterInput>,
+  sort?: Maybe<ContentfulPostContentTextNodeSortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };

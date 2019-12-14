@@ -47,6 +47,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 20px;
   }
 
+  p {
+    margin-bottom: 8px;
+  }
+
   article,
   aside,
   details,
@@ -101,6 +105,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   pre[class*="language-"] {
-    margin: 20px 0 !important;
+    margin: 16px 0 !important;
   }
 `

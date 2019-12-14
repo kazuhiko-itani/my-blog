@@ -17,7 +17,7 @@ const Post: React.FC<Props> = ({ pathContext }) => {
   return (
     <PostLayout>
       <ContentWrapper>
-        <HeadingH2>{postTitle}</HeadingH2>
+        <Title>{postTitle}</Title>
         <Content>
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </Content>
@@ -36,6 +36,11 @@ const ContentWrapper = styled.div`
     width: 100%;
     margin: 50px 20px;
   }
+`
+
+const Title = styled(HeadingH2)`
+  font-size: 28px;
+  margin-bottom: 20px;
 `
 
 const Content = styled.article`
