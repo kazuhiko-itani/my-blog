@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       <Inner>
         <List>
           <ListItem>
-            <StyledLink to="/about">HOME</StyledLink>
+            <StyledLink to="/">HOME</StyledLink>
           </ListItem>
           <ListItem>
             <StyledLink to="/about">ABOUT ME</StyledLink>
