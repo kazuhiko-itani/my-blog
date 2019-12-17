@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Akashixi's Blog`,
+    title: `Akashixi's tech blog`,
     description: "日々の仕事の中で学んだ技術的知見を発信しているブログです。",
     author: "akashixi",
     iconPath:

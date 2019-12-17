@@ -5,6 +5,7 @@ import { CategoryContext } from "../../gatsby-node"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import { HeadingH2 } from "../components/Atoms/Heading"
 import Breakpoint from "../components/GlobalStyle/breakpoint"
 import PostCard from "../components/PostCard"
 
@@ -24,6 +25,9 @@ const Category: React.FC<Props> = props => {
       title={props.pathContext.category.name}
     >
       <SEO title={props.pathContext.category.name} url={props.location.href} />
+      <StyledHeadingH2>
+        {props.pathContext.category.name}カテゴリの記事一覧
+      </StyledHeadingH2>
       <Posts>
         {props.pathContext.posts.map(post => {
           console.log(post)
@@ -45,6 +49,11 @@ const Category: React.FC<Props> = props => {
 }
 
 export default Category
+
+const StyledHeadingH2 = styled(HeadingH2)`
+  text-align: center;
+  margin-bottom: 40px;
+`
 
 const Posts = styled.div`
   display: flex;

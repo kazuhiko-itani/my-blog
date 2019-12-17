@@ -24,7 +24,7 @@ const IndexPage: React.FC<Props> = props => {
       pathname={props.path}
       title="トップページ"
     >
-      <SEO title="Home" url={props.location.href} />
+      <SEO title="Akashixi's tech blog" url={props.location.href} />
       <Posts>
         {props.data.allContentfulPost.edges.map(edge => {
           return (
