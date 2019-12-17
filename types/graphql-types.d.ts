@@ -4266,10 +4266,22 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
   post?: Maybe<SitePageContextPost>,
+  category?: Maybe<SitePageContextCategory>,
+  posts?: Maybe<Array<Maybe<SitePageContextPosts>>>,
+};
+
+export type SitePageContextCategory = {
+  name?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextCategoryFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageContextFilterInput = {
   post?: Maybe<SitePageContextPostFilterInput>,
+  category?: Maybe<SitePageContextCategoryFilterInput>,
+  posts?: Maybe<SitePageContextPostsFilterListInput>,
 };
 
 export type SitePageContextPost = {
@@ -4281,6 +4293,7 @@ export type SitePageContextPost = {
   updatedAt?: Maybe<Scalars['Date']>,
   image?: Maybe<SitePageContextPostImage>,
   category?: Maybe<SitePageContextPostCategory>,
+  id?: Maybe<Scalars['String']>,
 };
 
 export type SitePageContextPostCategory = {
@@ -4298,10 +4311,12 @@ export type SitePageContextPostContent = {
 
 export type SitePageContextPostContentChildMarkdownRemark = {
   html?: Maybe<Scalars['String']>,
+  excerpt?: Maybe<Scalars['String']>,
 };
 
 export type SitePageContextPostContentChildMarkdownRemarkFilterInput = {
   html?: Maybe<StringQueryOperatorInput>,
+  excerpt?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageContextPostContentFilterInput = {
@@ -4326,6 +4341,7 @@ export type SitePageContextPostFilterInput = {
   updatedAt?: Maybe<DateQueryOperatorInput>,
   image?: Maybe<SitePageContextPostImageFilterInput>,
   category?: Maybe<SitePageContextPostCategoryFilterInput>,
+  id?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageContextPostImage = {
@@ -4341,6 +4357,94 @@ export type SitePageContextPostImageFluid = {
 };
 
 export type SitePageContextPostImageFluidFilterInput = {
+  src?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPosts = {
+  node?: Maybe<SitePageContextPostsNode>,
+};
+
+export type SitePageContextPostsFilterInput = {
+  node?: Maybe<SitePageContextPostsNodeFilterInput>,
+};
+
+export type SitePageContextPostsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextPostsFilterInput>,
+};
+
+export type SitePageContextPostsNode = {
+  content?: Maybe<SitePageContextPostsNodeContent>,
+  publishedAt?: Maybe<Scalars['Date']>,
+  slug?: Maybe<Scalars['String']>,
+  title?: Maybe<Scalars['String']>,
+  description?: Maybe<SitePageContextPostsNodeDescription>,
+  updatedAt?: Maybe<Scalars['Date']>,
+  image?: Maybe<SitePageContextPostsNodeImage>,
+  category?: Maybe<SitePageContextPostsNodeCategory>,
+  id?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostsNodeCategory = {
+  name?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostsNodeCategoryFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPostsNodeContent = {
+  childMarkdownRemark?: Maybe<SitePageContextPostsNodeContentChildMarkdownRemark>,
+  content?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostsNodeContentChildMarkdownRemark = {
+  html?: Maybe<Scalars['String']>,
+  excerpt?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostsNodeContentChildMarkdownRemarkFilterInput = {
+  html?: Maybe<StringQueryOperatorInput>,
+  excerpt?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPostsNodeContentFilterInput = {
+  childMarkdownRemark?: Maybe<SitePageContextPostsNodeContentChildMarkdownRemarkFilterInput>,
+  content?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPostsNodeDescription = {
+  description?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostsNodeDescriptionFilterInput = {
+  description?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPostsNodeFilterInput = {
+  content?: Maybe<SitePageContextPostsNodeContentFilterInput>,
+  publishedAt?: Maybe<DateQueryOperatorInput>,
+  slug?: Maybe<StringQueryOperatorInput>,
+  title?: Maybe<StringQueryOperatorInput>,
+  description?: Maybe<SitePageContextPostsNodeDescriptionFilterInput>,
+  updatedAt?: Maybe<DateQueryOperatorInput>,
+  image?: Maybe<SitePageContextPostsNodeImageFilterInput>,
+  category?: Maybe<SitePageContextPostsNodeCategoryFilterInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPostsNodeImage = {
+  fluid?: Maybe<SitePageContextPostsNodeImageFluid>,
+};
+
+export type SitePageContextPostsNodeImageFilterInput = {
+  fluid?: Maybe<SitePageContextPostsNodeImageFluidFilterInput>,
+};
+
+export type SitePageContextPostsNodeImageFluid = {
+  src?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPostsNodeImageFluidFilterInput = {
   src?: Maybe<StringQueryOperatorInput>,
 };
 
@@ -4449,6 +4553,14 @@ export type SitePageFieldsEnum =
   'context___post___description___description' |
   'context___post___updatedAt' |
   'context___post___category___name' |
+  'context___post___id' |
+  'context___category___name' |
+  'context___posts' |
+  'context___posts___node___publishedAt' |
+  'context___posts___node___slug' |
+  'context___posts___node___title' |
+  'context___posts___node___updatedAt' |
+  'context___posts___node___id' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |
