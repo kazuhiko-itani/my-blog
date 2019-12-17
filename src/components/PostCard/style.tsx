@@ -33,7 +33,7 @@ const Category = styled(Link)`
   font-size: 14px;
   color: #333;
   margin: 10px 0 8px;
-  padding: 2px 8px;
+  padding: 0 8px;
   background-color: #d9d9d9;
   border-radius: 20px;
 
