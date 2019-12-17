@@ -35,6 +35,7 @@ const IndexPage: React.FC<Props> = props => {
               title={edge.node.title}
               slug={edge.node.slug}
               excerpt={edge.node.content.childMarkdownRemark.excerpt}
+              category={edge.node.category.name}
             />
           )
         })}
@@ -64,6 +65,9 @@ export const query = graphql`
             }
           }
           id
+          category {
+            name
+          }
         }
       }
     }

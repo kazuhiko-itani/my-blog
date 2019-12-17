@@ -12,25 +12,34 @@ type Props = {
   title: string
   slug: string
   excerpt: string
+  category: string
   className?: string
 }
 
-const { Card, CardContent, Published, PostContent } = styles
+const { Card, CardContent, Published, Category, PostContent } = styles
 
 export const PostCard: React.FC<Props> = props => {
+  const postLink = `/posts/${props.category.toLowerCase()}/${props.slug}`
+  const categoryLink = `/category/${props.category.toLowerCase()}`
+
   return (
     <Card className={props.className}>
       <div>
-        <Link to={`/posts/${props.slug}`}>
+        <Link to={postLink}>
           <img src={props.image} />
         </Link>
       </div>
       <CardContent>
-        <Published>{moment(props.publishedAt).format("YYYY-MM-DD")}</Published>
+        <div>
+          <Published>
+            {moment(props.publishedAt).format("YYYY-MM-DD")}
+          </Published>
+        </div>
+        <div>
+          <Category to={categoryLink}>{props.category}</Category>
+        </div>
         <StyledHeadingH2>
-          <StyledTextLink to={`/posts/${props.slug}`}>
-            {props.title}
-          </StyledTextLink>
+          <StyledTextLink to={postLink}>{props.title}</StyledTextLink>
         </StyledHeadingH2>
         <PostContent>{props.excerpt}</PostContent>
       </CardContent>
@@ -41,7 +50,7 @@ export const PostCard: React.FC<Props> = props => {
 export default PostCard
 
 const StyledHeadingH2 = styled(HeadingH2)`
-  margin-top: 10px;
+  margin-top: 4px;
 `
 
 const StyledTextLink = styled(Link)`
