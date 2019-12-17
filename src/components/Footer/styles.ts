@@ -21,6 +21,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
+  font-size: 14px;
   margin-top: 20px;
 `
 

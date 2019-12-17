@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     color: #333;
     box-sizing: border-box;
+    letter-spacing: 1px;
   }
 
   body {
@@ -45,10 +46,12 @@ export const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-size: 20px;
+    margin: 16px 0;
   }
 
   p {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
+    line-height: 2.0;
   }
 
   article,

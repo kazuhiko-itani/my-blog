@@ -524,7 +524,6 @@ export type ContentfulCategoryFieldsEnum =
   'post___title' |
   'post___slug' |
   'post___publishedAt' |
-  'post___tags' |
   'post___image___id' |
   'post___image___parent___id' |
   'post___image___parent___children' |
@@ -607,12 +606,12 @@ export type ContentfulCategoryFieldsEnum =
   'post___category___post___title' |
   'post___category___post___slug' |
   'post___category___post___publishedAt' |
-  'post___category___post___tags' |
   'post___category___post___spaceId' |
   'post___category___post___contentful_id' |
   'post___category___post___createdAt' |
   'post___category___post___updatedAt' |
   'post___category___post___node_locale' |
+  'post___category___post___tags' |
   'post___category___spaceId' |
   'post___category___contentful_id' |
   'post___category___createdAt' |
@@ -673,6 +672,7 @@ export type ContentfulCategoryFieldsEnum =
   'post___createdAt' |
   'post___updatedAt' |
   'post___node_locale' |
+  'post___tags' |
   'post___childContentfulPostDescriptionTextNode___id' |
   'post___childContentfulPostDescriptionTextNode___parent___id' |
   'post___childContentfulPostDescriptionTextNode___parent___children' |
@@ -982,7 +982,6 @@ export type ContentfulPost = Node & {
   title?: Maybe<Scalars['String']>,
   slug?: Maybe<Scalars['String']>,
   publishedAt?: Maybe<Scalars['Date']>,
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   image?: Maybe<ContentfulAsset>,
   category?: Maybe<ContentfulCategory>,
   description?: Maybe<ContentfulPostDescriptionTextNode>,
@@ -992,6 +991,7 @@ export type ContentfulPost = Node & {
   createdAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
   node_locale?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNode>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
 };
@@ -1537,7 +1537,6 @@ export type ContentfulPostFieldsEnum =
   'title' |
   'slug' |
   'publishedAt' |
-  'tags' |
   'image___id' |
   'image___parent___id' |
   'image___parent___parent___id' |
@@ -1681,7 +1680,6 @@ export type ContentfulPostFieldsEnum =
   'category___post___title' |
   'category___post___slug' |
   'category___post___publishedAt' |
-  'category___post___tags' |
   'category___post___image___id' |
   'category___post___image___children' |
   'category___post___image___contentful_id' |
@@ -1708,6 +1706,7 @@ export type ContentfulPostFieldsEnum =
   'category___post___createdAt' |
   'category___post___updatedAt' |
   'category___post___node_locale' |
+  'category___post___tags' |
   'category___post___childContentfulPostDescriptionTextNode___id' |
   'category___post___childContentfulPostDescriptionTextNode___children' |
   'category___post___childContentfulPostDescriptionTextNode___description' |
@@ -1858,6 +1857,7 @@ export type ContentfulPostFieldsEnum =
   'createdAt' |
   'updatedAt' |
   'node_locale' |
+  'tags' |
   'childContentfulPostDescriptionTextNode___id' |
   'childContentfulPostDescriptionTextNode___parent___id' |
   'childContentfulPostDescriptionTextNode___parent___parent___id' |
@@ -2001,7 +2001,6 @@ export type ContentfulPostFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   image?: Maybe<ContentfulAssetFilterInput>,
   category?: Maybe<ContentfulCategoryFilterInput>,
   description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
@@ -2011,6 +2010,7 @@ export type ContentfulPostFilterInput = {
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>,
 };
@@ -3864,6 +3864,8 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
+  polyfill?: Maybe<BooleanQueryOperatorInput>,
+  pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
 };
 
@@ -3952,7 +3954,6 @@ export type QueryContentfulPostArgs = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishedAt?: Maybe<DateQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   image?: Maybe<ContentfulAssetFilterInput>,
   category?: Maybe<ContentfulCategoryFilterInput>,
   description?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
@@ -3962,6 +3963,7 @@ export type QueryContentfulPostArgs = {
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
   childContentfulPostDescriptionTextNode?: Maybe<ContentfulPostDescriptionTextNodeFilterInput>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNodeFilterInput>
 };
@@ -4067,6 +4069,8 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>,
   port?: Maybe<Scalars['Int']>,
   host?: Maybe<Scalars['String']>,
+  polyfill?: Maybe<Scalars['Boolean']>,
+  pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
 };
 
@@ -4198,6 +4202,8 @@ export type SiteFieldsEnum =
   'siteMetadata___iconPath' |
   'port' |
   'host' |
+  'polyfill' |
+  'pathPrefix' |
   'buildTime';
 
 export type SiteFilterInput = {
@@ -4208,6 +4214,8 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
+  polyfill?: Maybe<BooleanQueryOperatorInput>,
+  pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
 };
 
@@ -4287,22 +4295,6 @@ export type SitePageContextPost = {
   image?: Maybe<SitePageContextPostImage>,
   publishedAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
-};
-
-
-export type SitePageContextPostPublishedAtArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
-};
-
-
-export type SitePageContextPostUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
 };
 
 export type SitePageContextPostCategory = {
@@ -4391,22 +4383,6 @@ export type SitePageContextPostsNode = {
   image?: Maybe<SitePageContextPostsNodeImage>,
   publishedAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
-};
-
-
-export type SitePageContextPostsNodePublishedAtArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
-};
-
-
-export type SitePageContextPostsNodeUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
 };
 
 export type SitePageContextPostsNodeCategory = {
@@ -4646,6 +4622,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___background_color' |
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
+  'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -4853,6 +4830,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___background_color' |
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
+  'pluginOptions___icon' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -4983,6 +4961,7 @@ export type SitePluginPluginOptions = {
   background_color?: Maybe<Scalars['String']>,
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
+  icon?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -5001,6 +4980,7 @@ export type SitePluginPluginOptionsFilterInput = {
   background_color?: Maybe<StringQueryOperatorInput>,
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
+  icon?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 

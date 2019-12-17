@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Akashixi's tech blog`,
+    title: `Akashixi's Blog`,
     description: "日々の仕事の中で学んだ技術的知見を発信しているブログです。",
     author: "akashixi",
     iconPath:
@@ -67,6 +67,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+        icon: `src/images/Icon.jpg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

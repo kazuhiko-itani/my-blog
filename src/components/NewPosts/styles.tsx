@@ -5,7 +5,7 @@ import { HeadingH4 } from "../Atoms/Heading"
 
 const Header = styled.div`
   border: 2px solid #d9d9d9;
-  padding: 10px 0;
+  padding: 0;
   text-align: center;
 `
 

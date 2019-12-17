@@ -9,6 +9,8 @@ import { HeadingH2 } from "../components/Atoms/Heading"
 import Breakpoint from "../components/GlobalStyle/breakpoint"
 
 import Prism from "prismjs"
+import "prismjs/components/prism-markup-templating"
+import "prismjs/components/prism-php.min"
 import "prismjs/components/prism-jsx.min"
 import "prismjs/components/prism-tsx.min"
 import "prismjs/components/prism-typescript.min"

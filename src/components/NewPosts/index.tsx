@@ -20,7 +20,7 @@ const {
 const NewPosts: React.FC = () => {
   const newPosts: NewPostsQuery = useStaticQuery(graphql`
     query NewPosts {
-      allContentfulPost(limit: 5, sort: { fields: createdAt, order: DESC }) {
+      allContentfulPost(limit: 5, sort: { fields: createdAt, order: ASC }) {
         edges {
           node {
             image {
