@@ -40,13 +40,7 @@ const SEO: React.FC<Props> = props => {
           title
           description
           author
-        }
-      }
-      MainVisualImageForMeta: file(relativePath: { eq: "MainVisual.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            src
-          }
+          iconPath
         }
       }
     }
@@ -64,19 +58,11 @@ const SEO: React.FC<Props> = props => {
   })
 
   const site: SiteMetaData = data.site
-  const metaImage: string =
-    data.MainVisualImageForMeta.childImageSharp.fluid.src
+  const metaImage: string = site.siteMetadata.iconPath
   const author: string = site.siteMetadata.author
   const metaDescription: string =
     props.description || site.siteMetadata.description
   const lang = props.lang || "ja"
-
-  let metaImagePath = ""
-  if (props.url) {
-    metaImagePath = `${props.url.split("/")[0]}//${
-      props.url.split("/")[2]
-    }${metaImage}`
-  }
 
   return (
     <Helmet
@@ -104,7 +90,7 @@ const SEO: React.FC<Props> = props => {
         },
         {
           property: `og:image`,
-          content: metaImagePath,
+          content: metaImage,
         },
         {
           property: `og:url`,

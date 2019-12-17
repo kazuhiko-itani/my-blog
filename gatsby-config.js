@@ -3,6 +3,8 @@ module.exports = {
     title: `Akashixi's Blog`,
     description: "日々の仕事の中で学んだ技術的知見を発信しているブログです。",
     author: "akashixi",
+    iconPath:
+      "https://akashixi-tech-blog.s3-ap-northeast-1.amazonaws.com/icon.jpg",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -65,7 +67,6 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/MainVisual.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

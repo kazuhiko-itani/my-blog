@@ -4199,6 +4199,7 @@ export type SiteFieldsEnum =
   'siteMetadata___title' |
   'siteMetadata___description' |
   'siteMetadata___author' |
+  'siteMetadata___iconPath' |
   'port' |
   'host' |
   'polyfill' |
@@ -4285,15 +4286,15 @@ export type SitePageContextFilterInput = {
 };
 
 export type SitePageContextPost = {
-  content?: Maybe<SitePageContextPostContent>,
-  publishedAt?: Maybe<Scalars['Date']>,
+  id?: Maybe<Scalars['String']>,
   slug?: Maybe<Scalars['String']>,
   title?: Maybe<Scalars['String']>,
   description?: Maybe<SitePageContextPostDescription>,
-  updatedAt?: Maybe<Scalars['Date']>,
-  image?: Maybe<SitePageContextPostImage>,
   category?: Maybe<SitePageContextPostCategory>,
-  id?: Maybe<Scalars['String']>,
+  content?: Maybe<SitePageContextPostContent>,
+  image?: Maybe<SitePageContextPostImage>,
+  publishedAt?: Maybe<Scalars['Date']>,
+  updatedAt?: Maybe<Scalars['Date']>,
 };
 
 export type SitePageContextPostCategory = {
@@ -4333,15 +4334,15 @@ export type SitePageContextPostDescriptionFilterInput = {
 };
 
 export type SitePageContextPostFilterInput = {
-  content?: Maybe<SitePageContextPostContentFilterInput>,
-  publishedAt?: Maybe<DateQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<SitePageContextPostDescriptionFilterInput>,
-  updatedAt?: Maybe<DateQueryOperatorInput>,
-  image?: Maybe<SitePageContextPostImageFilterInput>,
   category?: Maybe<SitePageContextPostCategoryFilterInput>,
-  id?: Maybe<StringQueryOperatorInput>,
+  content?: Maybe<SitePageContextPostContentFilterInput>,
+  image?: Maybe<SitePageContextPostImageFilterInput>,
+  publishedAt?: Maybe<DateQueryOperatorInput>,
+  updatedAt?: Maybe<DateQueryOperatorInput>,
 };
 
 export type SitePageContextPostImage = {
@@ -4373,15 +4374,15 @@ export type SitePageContextPostsFilterListInput = {
 };
 
 export type SitePageContextPostsNode = {
-  content?: Maybe<SitePageContextPostsNodeContent>,
-  publishedAt?: Maybe<Scalars['Date']>,
+  id?: Maybe<Scalars['String']>,
   slug?: Maybe<Scalars['String']>,
   title?: Maybe<Scalars['String']>,
   description?: Maybe<SitePageContextPostsNodeDescription>,
-  updatedAt?: Maybe<Scalars['Date']>,
-  image?: Maybe<SitePageContextPostsNodeImage>,
   category?: Maybe<SitePageContextPostsNodeCategory>,
-  id?: Maybe<Scalars['String']>,
+  content?: Maybe<SitePageContextPostsNodeContent>,
+  image?: Maybe<SitePageContextPostsNodeImage>,
+  publishedAt?: Maybe<Scalars['Date']>,
+  updatedAt?: Maybe<Scalars['Date']>,
 };
 
 export type SitePageContextPostsNodeCategory = {
@@ -4421,15 +4422,15 @@ export type SitePageContextPostsNodeDescriptionFilterInput = {
 };
 
 export type SitePageContextPostsNodeFilterInput = {
-  content?: Maybe<SitePageContextPostsNodeContentFilterInput>,
-  publishedAt?: Maybe<DateQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<SitePageContextPostsNodeDescriptionFilterInput>,
-  updatedAt?: Maybe<DateQueryOperatorInput>,
-  image?: Maybe<SitePageContextPostsNodeImageFilterInput>,
   category?: Maybe<SitePageContextPostsNodeCategoryFilterInput>,
-  id?: Maybe<StringQueryOperatorInput>,
+  content?: Maybe<SitePageContextPostsNodeContentFilterInput>,
+  image?: Maybe<SitePageContextPostsNodeImageFilterInput>,
+  publishedAt?: Maybe<DateQueryOperatorInput>,
+  updatedAt?: Maybe<DateQueryOperatorInput>,
 };
 
 export type SitePageContextPostsNodeImage = {
@@ -4546,21 +4547,21 @@ export type SitePageFieldsEnum =
   'component' |
   'componentChunkName' |
   'isCreatedByStatefulCreatePages' |
-  'context___post___content___content' |
-  'context___post___publishedAt' |
+  'context___post___id' |
   'context___post___slug' |
   'context___post___title' |
   'context___post___description___description' |
-  'context___post___updatedAt' |
   'context___post___category___name' |
-  'context___post___id' |
+  'context___post___content___content' |
+  'context___post___publishedAt' |
+  'context___post___updatedAt' |
   'context___category___name' |
   'context___posts' |
-  'context___posts___node___publishedAt' |
+  'context___posts___node___id' |
   'context___posts___node___slug' |
   'context___posts___node___title' |
+  'context___posts___node___publishedAt' |
   'context___posts___node___updatedAt' |
-  'context___posts___node___id' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |
@@ -4621,7 +4622,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___background_color' |
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
-  'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -4829,7 +4829,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___background_color' |
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
-  'pluginOptions___icon' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -4960,7 +4959,6 @@ export type SitePluginPluginOptions = {
   background_color?: Maybe<Scalars['String']>,
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
-  icon?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -4979,7 +4977,6 @@ export type SitePluginPluginOptionsFilterInput = {
   background_color?: Maybe<StringQueryOperatorInput>,
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
-  icon?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -5030,12 +5027,14 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
+  iconPath?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
+  iconPath?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -5077,7 +5076,7 @@ export type Unnamed_1_Query = { ProfileImage: Maybe<{ childImageSharp: Maybe<{ f
 export type SiteMetaDataQueryVariables = {};
 
 
-export type SiteMetaDataQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }>, MainVisualImageForMeta: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
+export type SiteMetaDataQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'iconPath'>> }> };
 
 export type ProfileImageQueryVariables = {};
 
