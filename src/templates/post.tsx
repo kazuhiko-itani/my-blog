@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import { PostContext } from "../../gatsby-node"
 
@@ -26,18 +27,23 @@ const Post: React.FC<Props> = props => {
     Prism.highlightAll()
   })
 
-  const postTitle = props.pathContext.post.title
-  const contentHtml = props.pathContext.post.content.childMarkdownRemark.html
+  const postData = props.pathContext.post
+
+  const categoryLink = `/category/${postData.category.name.toLowerCase()}`
+  const contentHtml = postData.content.childMarkdownRemark.html
 
   return (
-    <PostLayout url={props.location.href} title={postTitle}>
+    <PostLayout url={props.location.href} title={postData.title}>
       <SEO
-        title={postTitle}
-        description={props.pathContext.post.description.description}
+        title={postData.title}
+        description={postData.description.description}
         url={props.location.href}
       />
       <ContentWrapper>
-        <Title>{postTitle}</Title>
+        <Title>{postData.title}</Title>
+        <div>
+          <Category to={categoryLink}>{postData.category.name}</Category>
+        </div>
         <Content>
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </Content>
@@ -60,7 +66,20 @@ const ContentWrapper = styled.div`
 
 const Title = styled(HeadingH2)`
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+`
+
+const Category = styled(Link)`
+  font-size: 14px;
+  display: inline-block;
+  color: #333;
+  padding: 2px 8px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+
+  &:hover {
+    text-decoration: none;
+  }
 `
 
 const Content = styled.article`
