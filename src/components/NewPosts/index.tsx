@@ -47,11 +47,17 @@ const NewPosts: React.FC = () => {
         {newPosts.allContentfulPost.edges.map((edge, index) => {
           return (
             <Post key={edge.node.id}>
-              <Link to={`/posts/${edge.node.slug}`}>
-                <Image src={edge.node.image.fluid.src} />
+              <Link
+                to={`/posts/${edge.node.slug}`}
+                aria-label={edge.node.title}
+              >
+                <Image src={edge.node.image.fluid.src} alt={edge.node.title} />
               </Link>
               <Title>
-                <TitleLink to={`/posts/${edge.node.slug}`}>
+                <TitleLink
+                  to={`/posts/${edge.node.slug}`}
+                  aria-label={edge.node.title}
+                >
                   {edge.node.title}
                 </TitleLink>
               </Title>

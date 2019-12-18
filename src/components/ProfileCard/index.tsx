@@ -30,7 +30,7 @@ const ProfileCard: React.FC = () => {
         <HeadingH3>Profile</HeadingH3>
       </Header>
       <ContentWrapper>
-        <MyIcon fluid={image} />
+        <MyIcon fluid={image} alt="あかしぃのアイコン" />
         <Text>
           Webエンジニアです。30歳。フロントエンドが好き・得意。プロフィールは
           <TextLink to="/about" aria-label="ABOUT ME">
