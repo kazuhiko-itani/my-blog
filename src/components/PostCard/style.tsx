@@ -15,6 +15,10 @@ const Card = styled.div`
   }
 `
 
+const CardImage = styled.div`
+  border: 1px solid #e5e5e5;
+`
+
 const CardContent = styled.div`
   padding: 20px 0;
 `
@@ -49,6 +53,7 @@ const PostContent = styled.p`
 
 export default {
   Card,
+  CardImage,
   CardContent,
   Published,
   Category,

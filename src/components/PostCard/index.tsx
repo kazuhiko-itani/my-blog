@@ -16,7 +16,14 @@ type Props = {
   className?: string
 }
 
-const { Card, CardContent, Published, Category, PostContent } = styles
+const {
+  Card,
+  CardImage,
+  CardContent,
+  Published,
+  Category,
+  PostContent,
+} = styles
 
 export const PostCard: React.FC<Props> = props => {
   const postLink = `/posts/${props.category.toLowerCase()}/${props.slug}`
@@ -24,11 +31,11 @@ export const PostCard: React.FC<Props> = props => {
 
   return (
     <Card className={props.className}>
-      <div>
+      <CardImage>
         <Link to={postLink} aria-label={props.title}>
           <img src={props.image} alt={props.title} />
         </Link>
-      </div>
+      </CardImage>
       <CardContent>
         <div>
           <Published>

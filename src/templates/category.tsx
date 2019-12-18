@@ -30,7 +30,6 @@ const Category: React.FC<Props> = props => {
       </StyledHeadingH2>
       <Posts>
         {props.pathContext.posts.map(post => {
-          console.log(post)
           return (
             <StyledPostCard
               key={post.node.id}
