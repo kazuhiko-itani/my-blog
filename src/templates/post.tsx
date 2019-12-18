@@ -44,7 +44,9 @@ const Post: React.FC<Props> = props => {
       <ContentWrapper>
         <Title>{postData.title}</Title>
         <div>
-          <Category to={categoryLink}>{postData.category.name}</Category>
+          <Category to={categoryLink} aria-label={categoryLink}>
+            {postData.category.name}
+          </Category>
         </div>
         <Content>
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />

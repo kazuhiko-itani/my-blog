@@ -40,7 +40,7 @@ const Layout: React.FC<Props> = props => {
     <>
       <GlobalStyle />
       <Header />
-      <MainVisual fluid={image} />
+      <MainVisual fluid={image} alt="Akashixi's tech blog" />
       <MainLayout>
         <Main>{props.children}</Main>
         <StyledAside>

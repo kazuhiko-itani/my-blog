@@ -66,6 +66,7 @@ const AboutPage: React.FC<Props> = props => {
               href="https://twitter.com/akashi__akashi"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="Twitter"
             >
               @akashi__akashi
             </a>
@@ -76,6 +77,7 @@ const AboutPage: React.FC<Props> = props => {
               href="https://qiita.com/akashixi"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="Qiita"
             >
               https://qiita.com/akashixi
             </a>
@@ -86,6 +88,7 @@ const AboutPage: React.FC<Props> = props => {
               href="https://github.com/kazuhiko-itani"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="GitHub"
             >
               https://github.com/kazuhiko-itani
             </a>

@@ -25,8 +25,8 @@ export const PostCard: React.FC<Props> = props => {
   return (
     <Card className={props.className}>
       <div>
-        <Link to={postLink}>
-          <img src={props.image} />
+        <Link to={postLink} aria-label={props.title}>
+          <img src={props.image} alt={props.title} />
         </Link>
       </div>
       <CardContent>
@@ -36,10 +36,14 @@ export const PostCard: React.FC<Props> = props => {
           </Published>
         </div>
         <div>
-          <Category to={categoryLink}>{props.category}</Category>
+          <Category to={categoryLink} aria-label={categoryLink}>
+            {props.category}
+          </Category>
         </div>
         <StyledHeadingH2>
-          <StyledTextLink to={postLink}>{props.title}</StyledTextLink>
+          <StyledTextLink to={postLink} aria-label={props.title}>
+            {props.title}
+          </StyledTextLink>
         </StyledHeadingH2>
         <PostContent>{props.excerpt}</PostContent>
       </CardContent>

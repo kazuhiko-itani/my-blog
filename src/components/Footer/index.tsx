@@ -17,10 +17,14 @@ const Footer: React.FC = () => {
       <Inner>
         <List>
           <ListItem>
-            <StyledLink to="/">HOME</StyledLink>
+            <StyledLink to="/" aria-label="HOME">
+              HOME
+            </StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="/about">ABOUT ME</StyledLink>
+            <StyledLink to="/about" aria-label="ABOUT ME">
+              ABOUT ME
+            </StyledLink>
           </ListItem>
         </List>
         <Line />
