@@ -32,6 +32,9 @@ const NewPosts: React.FC = () => {
             slug
             title
             id
+            category {
+              name
+            }
           }
         }
       }
@@ -48,7 +51,9 @@ const NewPosts: React.FC = () => {
           return (
             <Post key={edge.node.id}>
               <Link
-                to={`/posts/${edge.node.slug}`}
+                to={`/${edge.node.category.name.toLowerCase()}/${
+                  edge.node.slug
+                }`}
                 aria-label={edge.node.title}
               >
                 <Image src={edge.node.image.fluid.src} alt={edge.node.title} />

@@ -5073,7 +5073,7 @@ export type NewPostsQueryVariables = {};
 
 export type NewPostsQuery = { allContentfulPost: { edges: Array<{ node: (
         Pick<ContentfulPost, 'publishedAt' | 'slug' | 'title' | 'id'>
-        & { image: Maybe<{ fluid: Maybe<Pick<ContentfulFluid, 'src'>> }> }
+        & { image: Maybe<{ fluid: Maybe<Pick<ContentfulFluid, 'src'>> }>, category: Maybe<Pick<ContentfulCategory, 'name'>> }
       ) }> } };
 
 export type Unnamed_1_QueryVariables = {};

@@ -26,7 +26,7 @@ const {
 } = styles
 
 export const PostCard: React.FC<Props> = props => {
-  const postLink = `/posts/${props.category.toLowerCase()}/${props.slug}`
+  const postLink = `/${props.category.toLowerCase()}/${props.slug}`
   const categoryLink = `/category/${props.category.toLowerCase()}`
 
   return (

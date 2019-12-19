@@ -74,7 +74,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   result.data.allContentfulPost.edges.forEach(edge => {
     createPage<PostContext>({
-      path: `/posts/${edge.node.category.name.toLowerCase()}/${edge.node.slug}`,
+      path: `/${edge.node.category.name.toLowerCase()}/${edge.node.slug}`,
       component: postTemplate,
       context: { post: edge.node },
     })
