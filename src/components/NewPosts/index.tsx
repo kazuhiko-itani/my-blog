@@ -60,7 +60,9 @@ const NewPosts: React.FC = () => {
               </Link>
               <Title>
                 <TitleLink
-                  to={`/posts/${edge.node.slug}`}
+                  to={`/${edge.node.category.name.toLowerCase()}/${
+                    edge.node.slug
+                  }`}
                   aria-label={edge.node.title}
                 >
                   {edge.node.title}
