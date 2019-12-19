@@ -2,8 +2,8 @@ import React from "react"
 import styles from "./styles"
 import styled from "styled-components"
 
-import ProfileCard from "../ProfileCard"
-import NewPosts from "../NewPosts"
+import { ProfileCard } from "../ProfileCard"
+import { NewPosts } from "../NewPosts"
 
 type Props = {
   pathname: string
@@ -12,7 +12,7 @@ type Props = {
 
 const { Wrapper } = styles
 
-const SideBar: React.FC<Props> = props => {
+export const SideBar: React.FC<Props> = props => {
   const isAboutPage = (): boolean => {
     return /^\/about/.test(props.pathname)
   }
@@ -26,8 +26,6 @@ const SideBar: React.FC<Props> = props => {
     </Wrapper>
   )
 }
-
-export default SideBar
 
 const Item = styled.div`
   margin-bottom: 32px;

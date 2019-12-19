@@ -9,7 +9,7 @@ import { TextLink } from "../Atoms/TextLink"
 
 const { ContentWrapper, Text, MyIcon } = styles
 
-const ProfileCard: React.FC = () => {
+export const ProfileCard: React.FC = () => {
   const data: ProfileImageQuery = useStaticQuery(graphql`
     query {
       ProfileImage: file(relativePath: { eq: "Icon.jpg" }) {
@@ -41,8 +41,6 @@ const ProfileCard: React.FC = () => {
     </div>
   )
 }
-
-export default ProfileCard
 
 const Header = styled.div`
   border: 2px solid #d9d9d9;

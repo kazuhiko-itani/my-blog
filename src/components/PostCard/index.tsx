@@ -4,7 +4,7 @@ import styled from "styled-components"
 import * as moment from "moment"
 
 import { HeadingH2 } from "../Atoms/Heading"
-import styles from "./style"
+import styles from "./styles"
 
 type Props = {
   image: string

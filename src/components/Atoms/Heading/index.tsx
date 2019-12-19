@@ -1,5 +1,5 @@
 import * as React from "react"
-import styles from "./style"
+import styles from "./styles"
 
 interface HeadingProps {
   className?: string

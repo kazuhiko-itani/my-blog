@@ -11,7 +11,7 @@ const {
   CopyRight,
 } = styles
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <Inner>
@@ -33,5 +33,3 @@ const Footer: React.FC = () => {
     </StyledFooter>
   )
 }
-
-export default Footer

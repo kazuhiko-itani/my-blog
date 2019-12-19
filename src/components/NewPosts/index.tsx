@@ -17,7 +17,7 @@ const {
   Line,
 } = styles
 
-const NewPosts: React.FC = () => {
+export const NewPosts: React.FC = () => {
   const newPosts: NewPostsQuery = useStaticQuery(graphql`
     query NewPosts {
       allContentfulPost(limit: 5, sort: { fields: createdAt, order: ASC }) {
@@ -83,5 +83,3 @@ const NewPosts: React.FC = () => {
     </div>
   )
 }
-
-export default NewPosts

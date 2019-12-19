@@ -3,7 +3,7 @@ import styles from "./styles"
 
 const { StyledHeader, Inner, List, ListItem, StyledLink } = styles
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <StyledHeader>
       <Inner>
@@ -25,5 +25,3 @@ const Header: React.FC = () => {
     </StyledHeader>
   )
 }
-
-export default Header

@@ -2,8 +2,8 @@ import React from "react"
 import styles from "./styles"
 import styled from "styled-components"
 
-import Header from "../Header"
-import Footer from "../Footer"
+import { Header } from "../Header"
+import { Footer } from "../Footer"
 import { GlobalStyle } from "../GlobalStyle"
 import { SocialButtons } from "../SocialButtons"
 
