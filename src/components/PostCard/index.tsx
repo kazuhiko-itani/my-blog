@@ -47,12 +47,10 @@ export const PostCard: React.FC<Props> = props => {
             {props.category}
           </Category>
         </div>
-        <StyledHeadingH2>
-          <StyledTextLink to={postLink} aria-label={props.title}>
-            {props.title}
-          </StyledTextLink>
-        </StyledHeadingH2>
-        <PostContent>{props.excerpt}</PostContent>
+        <StyledTextLink to={postLink} aria-label={props.title}>
+          <StyledHeadingH2>{props.title}</StyledHeadingH2>
+          <PostContent>{props.excerpt}</PostContent>
+        </StyledTextLink>
       </CardContent>
     </Card>
   )
@@ -67,4 +65,12 @@ const StyledHeadingH2 = styled(HeadingH2)`
 const StyledTextLink = styled(Link)`
   color: #333;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+
+    h2 {
+      text-decoration: underline;
+    }
+  }
 `
