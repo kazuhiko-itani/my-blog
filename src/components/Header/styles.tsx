@@ -10,7 +10,7 @@ const Inner = styled.div`
   padding: 0 120px;
 
   @media (max-width: ${Breakpoint.sp}) {
-    padding: 10px 20px;
+    padding: 0 20px;
   }
 `
 

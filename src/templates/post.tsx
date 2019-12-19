@@ -64,7 +64,7 @@ const ContentWrapper = styled.div`
 
   @media (max-width: ${Breakpoint.sp}) {
     width: 92%;
-    margin: 50px auto;
+    margin: 20px auto;
   }
 `
 

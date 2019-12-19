@@ -5,7 +5,7 @@ const Main = styled.main`
   margin: 50px 74px 80px 74px;
 
   @media (max-width: ${Breakpoint.sp}) {
-    margin: 40px 0 80px;
+    margin: 10px 0 80px;
   }
 `
 
